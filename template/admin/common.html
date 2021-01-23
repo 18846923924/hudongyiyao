@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:16:41 GMT -->
+{include file="/admin/head" /}
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"><i class="fa fa-times-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element" style="text-align: center">
+                        <span><img alt="image" class="img-circle" src="__static__/img/head.jpg" width="60px"/></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                 <span class="block m-t-xs"><strong class="font-bold">{$name}</strong></span>
+                                 <span class="text-muted text-xs block">{$name}<b class="caret"></b></span>
+                                </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li class="divider">{$name}</li>
+                            <li><a onclick="loginOut()">安全退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                    </div>
+                </li>
+                {volist name="navs" id="vo"}
+                <li>
+                    <a href="#">
+                        <i class="iconfont {$vo.icon}"></i>
+                        <span class="nav-label">{$vo.name}</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    {if $vo.an_id eq 3}
+                    <ul class="nav nav-second-level">
+                        {volist name="vo.subs" id="v" key='k'}
+                        
+                        <li>
+                            <a class="J_menuItem" href="{$v.url}" data-index="0"><i class="iconfont {$v.icon}"></i>{$v.name}</a>
+                        </li>
+                      
+                        {/volist}
+                    </ul>
+                    {else}
+                    <ul class="nav nav-second-level">
+                        {volist name="vo.subs" id="v"}
+                        <li>
+                            <a class="J_menuItem" href="{$v.url}" data-index="0"><i class="iconfont {$v.icon}"></i>{$v.name}</a>
+                        </li>
+                        {/volist}
+                    </ul>
+                    {/if}
+                </li>
+                {/volist}
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown hidden-xs">
+                        <a class="right-sidebar-toggle" aria-expanded="false">
+<!--                            <i class="fa fa-tasks"></i> 主题-->
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row content-tabs">
+            <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs J_menuTabs">
+                <div class="page-tabs-content">
+                    <a href="javascript:;" class="active J_menuTab" data-id="/cms/index">首页</a>
+
+                </div>
+            </nav>
+            <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+            </button>
+            <div class="btn-group roll-nav roll-right">
+                <button class="dropdown J_tabClose" data-toggle="dropdown">更多操作<span class="caret"></span>
+
+                </button>
+                <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                    <li class="J_tabBack"><a>后退</a>
+                    </li>
+                    <li class="J_tabFresh"><a>刷新</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                    </li>
+                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="roll-nav roll-right J_tabExit" onclick="loginOut()"><i class="fa fa fa-sign-out"></i> 退出</a>
+        </div>
+        <div class="row J_mainContent" id="content-main">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/cms/index" frameborder="0" data-id="/cms/index" seamless></iframe>
+        </div>
+        <div class="footer">
+            <div style="text-align: center">
+                Copyright&nbsp; 2003-2020&nbsp; WEETOP &nbsp;all &nbsp;rights&nbsp; reserved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.zjteam.com/" target="_blank">杭州帷拓科技有限公司版权所有</a>
+            </div>
+        </div>
+    </div>
+    <!--右侧部分结束-->
+    <!--右侧边栏开始-->
+    <!--右侧边栏结束-->
+</div>
+<script src="__static__/hplus_ui/js/jquery.min.js?v=2.1.4"></script>
+<script src="__static__/hplus_ui/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="__static__/hplus_ui/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="__static__/hplus_ui/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="__static__/hplus_ui/js/plugins/layer/layer.min.js"></script>
+<script src="__static__/hplus_ui/js/hplus.min.js?v=4.1.0"></script>
+<script type="text/javascript" src="__static__/hplus_ui/js/contabs.min.js"></script>
+<script src="__static__/hplus_ui/js/plugins/pace/pace.min.js"></script>
+<script src="__static__/js/common_zhb.js"></script>
+<script src="__static__/hplus_ui/js/contabs.js"></script>
+<script type="text/javascript" src="__static__/layui/layui.js"></script>
+<script type="text/javascript">
+    function loginOut() {
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "login/out",
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    location.reload()
+                }
+                else
+                    toast('warning',res.msg)
+            },
+            error : function () {
+                toast('error','网络异常')
+            }
+        })
+    }
+</script>
+</body>
+</html>

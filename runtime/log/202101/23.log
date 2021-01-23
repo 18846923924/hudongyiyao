@@ -1,0 +1,3388 @@
+---------------------------------------------------------------
+[2021-01-23T14:43:23+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.058000s] [吞吐率：17.24req/s] [内存消耗：4,561.37kb] [文件加载：104]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `an`.`an_id`,`an`.`name`,`an`.`icon` FROM `admin_nav_permission` `anp` LEFT JOIN `admin_nav` `an` ON `anp`.`an_id`=`an`.`an_id` WHERE  `anp`.`ag_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '2' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '3' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '4' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '5' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '6' ORDER BY `sort` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:24+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.074000s] [吞吐率：13.51req/s] [内存消耗：4,391.12kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T14:43:26+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.123000s] [吞吐率：8.13req/s] [内存消耗：4,909.89kb] [文件加载：112]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav` ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 1 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 2 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 3 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 4 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 5 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 6 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:29+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/sub/permission/edit
+[运行时间：0.255000s] [吞吐率：3.92req/s] [内存消耗：4,074.66kb] [文件加载：105]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/sub/permission/edit',
+  'route' => 'admin/adminUser/subPermissionEdit',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/permission',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '16',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'ag_id' => '1',
+  'ans_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `admin_nav_sub_permission` (`ans_id` , `ag_id`) VALUES (1 , 1) [ RunTime:0.181000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:29+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/sub/permission/edit
+[运行时间：0.113000s] [吞吐率：8.85req/s] [内存消耗：4,074.66kb] [文件加载：105]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/sub/permission/edit',
+  'route' => 'admin/adminUser/subPermissionEdit',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/permission',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '16',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'ag_id' => '1',
+  'ans_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `admin_nav_sub_permission` (`ans_id` , `ag_id`) VALUES (2 , 1) [ RunTime:0.054000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:30+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/sub/permission/edit
+[运行时间：0.143000s] [吞吐率：6.99req/s] [内存消耗：4,074.66kb] [文件加载：105]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/sub/permission/edit',
+  'route' => 'admin/adminUser/subPermissionEdit',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/permission',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '16',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'ag_id' => '1',
+  'ans_id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `admin_nav_sub_permission` (`ans_id` , `ag_id`) VALUES (3 , 1) [ RunTime:0.068000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:32+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/sub/permission/edit
+[运行时间：0.114000s] [吞吐率：8.77req/s] [内存消耗：4,074.66kb] [文件加载：105]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/sub/permission/edit',
+  'route' => 'admin/adminUser/subPermissionEdit',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/permission',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '16',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'ag_id' => '1',
+  'ans_id' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `admin_nav_sub_permission` (`ans_id` , `ag_id`) VALUES (4 , 1) [ RunTime:0.073000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:33+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.069000s] [吞吐率：14.49req/s] [内存消耗：4,415.73kb] [文件加载：102]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `an`.`an_id`,`an`.`name`,`an`.`icon` FROM `admin_nav_permission` `anp` LEFT JOIN `admin_nav` `an` ON `anp`.`an_id`=`an`.`an_id` WHERE  `anp`.`ag_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '2' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '3' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '4' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '5' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '6' ORDER BY `sort` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:43:33+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.074000s] [吞吐率：13.51req/s] [内存消耗：4,391.12kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T14:54:02+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.092000s] [吞吐率：10.87req/s] [内存消耗：4,687.52kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:54:03+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.088000s] [吞吐率：11.36req/s] [内存消耗：4,803.31kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:54:04+08:00] 127.0.0.1 GET wee.huandong.xh/cms/config
+[运行时间：0.118000s] [吞吐率：8.47req/s] [内存消耗：4,445.73kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/config',
+  'route' => 'admin/config/IndexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\config\edit.html [ array (
+  0 => 'data',
+  1 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `webconfig` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `varname`,`varinfo`,`varvalue` FROM `webconfig` WHERE  `vargroup` = 0 ORDER BY `orderid` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.021000s ]
+---------------------------------------------------------------
+[2021-01-23T14:54:05+08:00] 127.0.0.1 GET wee.huandong.xh/cms/banner
+[运行时间：0.074000s] [吞吐率：13.51req/s] [内存消耗：4,724.08kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/banner',
+  'route' => 'admin/page/bannerPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\banner.html [ array (
+  0 => 'banners',
+  1 => 'type',
+  2 => 'area',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/banner'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `banner` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `banner` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `banner` ORDER BY `sort` LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bannertype` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bannertype` WHERE  `bt_id` = 2 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bannertype` WHERE  `bt_id` = 3 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bannertype` WHERE  `bt_id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bannertype` WHERE  `bt_id` = 5 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bannertype` WHERE  `bt_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:54:06+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.061000s] [吞吐率：16.39req/s] [内存消耗：4,638.08kb] [文件加载：108]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:03+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.077000s] [吞吐率：12.99req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:04+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/1?name=%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE%E7%9B%B8%E5%86%8C
+[运行时间：0.076000s] [吞吐率：13.16req/s] [内存消耗：4,683.40kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '文章配图相册',
+  'a_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 1 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:04+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/f41cf3d9ebd4035c8b9d3c17946c9988.jpg
+[运行时间：0.028000s] [吞吐率：35.71req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:05+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210114/2e7f691bf85fa1dc8921f6cd7dfb2b2d.jpg
+[运行时间：0.045000s] [吞吐率：22.22req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:09+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.213000s] [吞吐率：4.69req/s] [内存消耗：4,107.82kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/1?name=%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE%E7%9B%B8%E5%86%8C',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '44',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '1',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '21',
+    1 => '13',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-2  WHERE  `a_id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 21 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 13 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (21,13) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:10+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/1?name=%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE%E7%9B%B8%E5%86%8C
+[运行时间：0.068000s] [吞吐率：14.71req/s] [内存消耗：4,533.59kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/1?name=%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE%E7%9B%B8%E5%86%8C',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '文章配图相册',
+  'a_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 1 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:12+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.093000s] [吞吐率：10.75req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:13+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/2?name=%E5%85%AC%E5%8F%B8%E8%8D%A3%E8%AA%89%E7%9B%B8%E5%86%8C
+[运行时间：0.064000s] [吞吐率：15.63req/s] [内存消耗：4,536.41kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '2',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '公司荣誉相册',
+  'a_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 2 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:14+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/3687eeaadbc277bc1fc6c04c88d26815.jpg
+[运行时间：0.028000s] [吞吐率：35.71req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:15+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/f62bcae103a9d6568086b01bbd9a3873.jpg
+[运行时间：0.032000s] [吞吐率：31.25req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:18+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.178000s] [吞吐率：5.62req/s] [内存消耗：4,107.82kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/2?name=%E5%85%AC%E5%8F%B8%E8%8D%A3%E8%AA%89%E7%9B%B8%E5%86%8C',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '44',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '2',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '22',
+    1 => '23',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-2  WHERE  `a_id` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 22 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 23 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (22,23) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:19+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/2?name=%E5%85%AC%E5%8F%B8%E8%8D%A3%E8%AA%89%E7%9B%B8%E5%86%8C
+[运行时间：0.065000s] [吞吐率：15.38req/s] [内存消耗：4,533.59kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '2',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/2?name=%E5%85%AC%E5%8F%B8%E8%8D%A3%E8%AA%89%E7%9B%B8%E5%86%8C',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '公司荣誉相册',
+  'a_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 2 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 2 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:20+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.099000s] [吞吐率：10.10req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:22+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/3?name=%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5LOGO
+[运行时间：0.046000s] [吞吐率：21.74req/s] [内存消耗：4,542.08kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '3',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '友情链接LOGO',
+  'a_id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 3 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 3 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:22+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/5e157958f0538ba289825be472eedb87.png
+[运行时间：0.026000s] [吞吐率：38.46req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:23+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/9cb30c24a2e9cef4480595d73b9f2f00.png
+[运行时间：0.042000s] [吞吐率：23.81req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:23+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/4c89ad9136ca5e7ec5f575d3bbebd17f.png
+[运行时间：0.024000s] [吞吐率：41.67req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:23+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/d8efaed3c305a826894fc9590b978bb1.png
+[运行时间：0.027000s] [吞吐率：37.04req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:30+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.208000s] [吞吐率：4.81req/s] [内存消耗：4,112.55kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/3?name=%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5LOGO',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '107',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '3',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '25',
+    1 => '15',
+    2 => '14',
+    3 => '16',
+    4 => '17',
+    5 => '7',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-6  WHERE  `a_id` = 3 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 25 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 15 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 14 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 16 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 17 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 7 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (25,15,14,16,17,7) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:31+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/3?name=%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5LOGO
+[运行时间：0.047000s] [吞吐率：21.28req/s] [内存消耗：4,533.57kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '3',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/3?name=%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5LOGO',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '友情链接LOGO',
+  'a_id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 3 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 3 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:32+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.074000s] [吞吐率：13.51req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:33+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/4?name=%E4%BA%A7%E5%93%81%E5%9B%BE%E7%89%87
+[运行时间：0.049000s] [吞吐率：20.41req/s] [内存消耗：4,536.43kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '产品图片',
+  'a_id' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 4 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:33+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20201224/be1b387c0381d59fd7f8a910ddf086b6.jpg
+[运行时间：0.022000s] [吞吐率：45.45req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:33+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/d4948118625ea076bf00c5146f823f71.jpg
+[运行时间：0.032000s] [吞吐率：31.25req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:37+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.191000s] [吞吐率：5.24req/s] [内存消耗：4,107.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/4?name=%E4%BA%A7%E5%93%81%E5%9B%BE%E7%89%87',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '43',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '4',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '24',
+    1 => '4',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-2  WHERE  `a_id` = 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 24 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (24,4) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:38+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/4?name=%E4%BA%A7%E5%93%81%E5%9B%BE%E7%89%87
+[运行时间：0.072000s] [吞吐率：13.89req/s] [内存消耗：4,533.57kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/4?name=%E4%BA%A7%E5%93%81%E5%9B%BE%E7%89%87',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '产品图片',
+  'a_id' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 4 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:39+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.071000s] [吞吐率：14.08req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:40+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/5?name=Banner%E5%9B%BE
+[运行时间：0.062000s] [吞吐率：16.13req/s] [内存消耗：4,540.65kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '5',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'Banner图',
+  'a_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 5 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:48+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.151000s] [吞吐率：6.62req/s] [内存消耗：4,111.34kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/5?name=Banner%E5%9B%BE',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '90',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '5',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '11',
+    1 => '12',
+    2 => '10',
+    3 => '8',
+    4 => '9',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-5  WHERE  `a_id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 11 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 12 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 10 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 8 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 9 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (11,12,10,8,9) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:48+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/5?name=Banner%E5%9B%BE
+[运行时间：0.064000s] [吞吐率：15.63req/s] [内存消耗：4,533.54kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '5',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/5?name=Banner%E5%9B%BE',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'Banner图',
+  'a_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 5 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:50+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.062000s] [吞吐率：16.13req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:51+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/6?name=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE
+[运行时间：0.058000s] [吞吐率：17.24req/s] [内存消耗：4,537.84kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '6',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '关于我们文章配图',
+  'a_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 6 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 6 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:51+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/a75256d609528fb202e3e0ec50e36c71.jpg
+[运行时间：0.022000s] [吞吐率：45.45req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:51+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/a52fea8b9b2a9259726d444bca2a7315.jpg
+[运行时间：0.028000s] [吞吐率：35.71req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:51+08:00] 127.0.0.1 GET wee.huandong.xh/public/uploads/20210115/a157454c68eb10b3fdb27e044ddd871b.jpg
+[运行时间：0.025000s] [吞吐率：40.00req/s] [内存消耗：2,065.63kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[2021-01-23T14:55:57+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/pic/del/batch
+[运行时间：0.160000s] [吞吐率：6.25req/s] [内存消耗：4,108.70kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/pic/del/batch',
+  'route' => 'admin/album/delPicBatch',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/6?name=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '60',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '6',
+  'file' => '',
+  'ap_id' => 
+  array (
+    0 => '18',
+    1 => '19',
+    2 => '20',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] UPDATE `album`  SET `pic_num` = pic_num-3  WHERE  `a_id` = 6 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 18 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 19 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic` FROM `album_pic` WHERE  `ap_id` = 20 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `album_pic` WHERE  `ap_id` IN (18,19,20) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:58+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album/pic/6?name=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE
+[运行时间：0.069000s] [吞吐率：14.49req/s] [内存消耗：4,533.88kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album/pic/<a_id>',
+  'route' => 'admin/page/albumPicPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '6',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album/pic/6?name=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'name' => '关于我们文章配图',
+  'a_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album_pic.html [ array (
+  0 => 'pics',
+  1 => 'name',
+  2 => 'a_id',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album_pic` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `album_pic` WHERE  `a_id` = 6 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ap_id`,`pic`,`pic_name`,`width`,`height`,`size` FROM `album_pic` WHERE  `a_id` = 6 ORDER BY `pic_time` DESC,`pic_name` LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:55:58+08:00] 127.0.0.1 GET wee.huandong.xh/cms/album
+[运行时间：0.089000s] [吞吐率：11.24req/s] [内存消耗：4,491.80kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/album',
+  'route' => 'admin/page/albumListPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\album\album.html [ array (
+  0 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/album'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T14:56:02+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/del/2
+[运行时间：0.178000s] [吞吐率：5.62req/s] [内存消耗：4,043.30kb] [文件加载：103]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/del/<a_id>',
+  'route' => 'admin/album/delAlbum',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '2',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'origin' => 'http://wee.huandong.xh',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pic_num` FROM `album` WHERE  `a_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album` WHERE  `a_id` = 2 [ RunTime:0.094000s ]
+---------------------------------------------------------------
+[2021-01-23T14:56:05+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/del/3
+[运行时间：0.188000s] [吞吐率：5.32req/s] [内存消耗：4,043.30kb] [文件加载：103]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/del/<a_id>',
+  'route' => 'admin/album/delAlbum',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '3',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'origin' => 'http://wee.huandong.xh',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pic_num` FROM `album` WHERE  `a_id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `album` WHERE  `a_id` = 3 [ RunTime:0.110000s ]
+---------------------------------------------------------------
+[2021-01-23T14:56:07+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/del/4
+[运行时间：0.153000s] [吞吐率：6.54req/s] [内存消耗：4,043.30kb] [文件加载：103]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/del/<a_id>',
+  'route' => 'admin/album/delAlbum',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'origin' => 'http://wee.huandong.xh',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pic_num` FROM `album` WHERE  `a_id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `album` WHERE  `a_id` = 4 [ RunTime:0.108000s ]
+---------------------------------------------------------------
+[2021-01-23T14:56:09+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/del/5
+[运行时间：0.136000s] [吞吐率：7.35req/s] [内存消耗：4,043.30kb] [文件加载：103]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/del/<a_id>',
+  'route' => 'admin/album/delAlbum',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '5',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'origin' => 'http://wee.huandong.xh',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pic_num` FROM `album` WHERE  `a_id` = 5 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `album` WHERE  `a_id` = 5 [ RunTime:0.085000s ]
+---------------------------------------------------------------
+[2021-01-23T14:56:11+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/album/del/6
+[运行时间：0.128000s] [吞吐率：7.81req/s] [内存消耗：4,043.30kb] [文件加载：103]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/album/del/<a_id>',
+  'route' => 'admin/album/delAlbum',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+    'a_id' => '6',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/album',
+  'origin' => 'http://wee.huandong.xh',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'a_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pic_num` FROM `album` WHERE  `a_id` = 6 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `album` WHERE  `a_id` = 6 [ RunTime:0.088000s ]
+---------------------------------------------------------------
+[2021-01-23T15:03:28+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.048000s] [吞吐率：20.83req/s] [内存消耗：3,389.11kb] [文件加载：97]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+---------------------------------------------------------------
+[2021-01-23T15:03:28+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.070000s] [吞吐率：14.29req/s] [内存消耗：4,390.72kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T15:03:44+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.049000s] [吞吐率：20.41req/s] [内存消耗：3,389.18kb] [文件加载：97]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+---------------------------------------------------------------
+[2021-01-23T15:03:44+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.051000s] [吞吐率：19.61req/s] [内存消耗：4,391.12kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T15:04:04+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.068000s] [吞吐率：14.71req/s] [内存消耗：4,562.09kb] [文件加载：104]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `an`.`an_id`,`an`.`name`,`an`.`icon` FROM `admin_nav_permission` `anp` LEFT JOIN `admin_nav` `an` ON `anp`.`an_id`=`an`.`an_id` WHERE  `anp`.`ag_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '2' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '3' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '5' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '6' ORDER BY `sort` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T15:04:04+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.072000s] [吞吐率：13.89req/s] [内存消耗：4,390.72kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T15:20:17+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.104000s] [吞吐率：9.62req/s] [内存消耗：4,687.52kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T15:20:18+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.114000s] [吞吐率：8.77req/s] [内存消耗：4,909.75kb] [文件加载：112]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav` ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 1 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 2 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 3 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 5 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 6 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T15:27:19+08:00] 127.0.0.1 GET wee.huandong.xh/cms/config
+[运行时间：0.058000s] [吞吐率：17.24req/s] [内存消耗：4,439.20kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/config',
+  'route' => 'admin/config/IndexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\config\edit.html [ array (
+  0 => 'data',
+  1 => 'albums',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `webconfig` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `varname`,`varinfo`,`varvalue` FROM `webconfig` WHERE  `vargroup` = 0 ORDER BY `orderid` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `album` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `album` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T16:15:14+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.098000s] [吞吐率：10.20req/s] [内存消耗：4,687.85kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T16:16:09+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.074000s] [吞吐率：13.51req/s] [内存消耗：4,963.17kb] [文件加载：112]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T16:39:10+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.050000s] [吞吐率：20.00req/s] [内存消耗：4,540.79kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T17:01:08+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.192000s] [吞吐率：5.21req/s] [内存消耗：4,750.37kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav` ORDER BY `sort` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 1 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 2 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 3 ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 5 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_nav_sub` WHERE  `an_id` = 6 ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:01:10+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.071000s] [吞吐率：14.08req/s] [内存消耗：4,540.79kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:29:29+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.121000s] [吞吐率：8.26req/s] [内存消耗：4,803.56kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T17:41:37+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.116000s] [吞吐率：8.62req/s] [内存消耗：4,692.37kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:43:55+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.108000s] [吞吐率：9.26req/s] [内存消耗：4,692.37kb] [文件加载：109]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T17:44:21+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.110000s] [吞吐率：9.09req/s] [内存消耗：4,562.43kb] [文件加载：104]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `an`.`an_id`,`an`.`name`,`an`.`icon` FROM `admin_nav_permission` `anp` LEFT JOIN `admin_nav` `an` ON `anp`.`an_id`=`an`.`an_id` WHERE  `anp`.`ag_id` = '1' ORDER BY `sort` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '2' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '3' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '5' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '6' ORDER BY `sort` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:44:22+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.077000s] [吞吐率：12.99req/s] [内存消耗：4,391.20kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T17:44:26+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.066000s] [吞吐率：15.15req/s] [内存消耗：4,541.23kb] [文件加载：107]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:47:38+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.070000s] [吞吐率：14.29req/s] [内存消耗：3,389.34kb] [文件加载：97]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+---------------------------------------------------------------
+[2021-01-23T17:47:38+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.070000s] [吞吐率：14.29req/s] [内存消耗：4,391.70kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T17:47:40+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.098000s] [吞吐率：10.20req/s] [内存消耗：4,783.01kb] [文件加载：116]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `province` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT code as p_code,`name` FROM `province` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.002000s ]
+[ error ] [8]未定义数组索引: ag_id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:47:42+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.054000s] [吞吐率：18.52req/s] [内存消耗：4,628.80kb] [文件加载：114]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: ag_id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:48:07+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.057000s] [吞吐率：17.54req/s] [内存消耗：4,628.80kb] [文件加载：114]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+[ error ] [8]未定义数组索引: ag_id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:48:08+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.052000s] [吞吐率：19.23req/s] [内存消耗：4,628.80kb] [文件加载：114]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+[ error ] [8]未定义数组索引: ag_id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:48:09+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.063000s] [吞吐率：15.87req/s] [内存消耗：4,628.80kb] [文件加载：114]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: ag_id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:48:29+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.057000s] [吞吐率：17.54req/s] [内存消耗：3,389.27kb] [文件加载：97]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+---------------------------------------------------------------
+[2021-01-23T17:48:29+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.071000s] [吞吐率：14.08req/s] [内存消耗：4,391.30kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T17:48:31+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.068000s] [吞吐率：14.71req/s] [内存消耗：4,780.13kb] [文件加载：116]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.000000s ]
+[ error ] [8]未定义数组索引: id[D:\xiangmu\huadongyiyao\runtime\temp\3943f79c3e88d18b1b11b527e8b16839.php:98]
+---------------------------------------------------------------
+[2021-01-23T17:49:38+08:00] 127.0.0.1 GET wee.huandong.xh/cms/staff
+[运行时间：0.091000s] [吞吐率：10.99req/s] [内存消耗：4,728.79kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/staff',
+  'route' => 'admin/page/staffPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\staff.html [ array (
+  0 => 'staffs',
+  1 => 'groups',
+  2 => 'name',
+  3 => 'province',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/staff'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_user` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT ag.name group_name,`au`.`name`,`au`.`status`,`au`.`au_id`,`au`.`nickname` FROM admin_user au LEFT JOIN `admin_group` `ag` ON `au`.`ag_id`=`ag`.`ag_id` ORDER BY `ag`.`ag_id` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:50:09+08:00] 127.0.0.1 GET wee.huandong.xh/cms/permission
+[运行时间：0.079000s] [吞吐率：12.66req/s] [内存消耗：4,804.07kb] [文件加载：110]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/permission',
+  'route' => 'admin/page/permissionPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\system\permission.html [ array (
+  0 => 'groups',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id` FROM `admin_nav_sub` `ans` LEFT JOIN `admin_nav_sub_permission` `ansp` ON `ans`.`ans_id`=`ansp`.`ans_id` WHERE  `ans`.`url` = '/cms/permission'  AND `ansp`.`ag_id` = '1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 1  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 2  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 3  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `anp_id` FROM `admin_nav_permission` WHERE  `an_id` = 6  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 4  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 5  AND `ag_id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[2021-01-23T17:50:13+08:00] 127.0.0.1 POST wee.huandong.xh/cms/api/sub/permission/edit
+[运行时间：0.287000s] [吞吐率：3.48req/s] [内存消耗：4,075.00kb] [文件加载：105]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/api/sub/permission/edit',
+  'route' => 'admin/adminUser/subPermissionEdit',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/permission',
+  'origin' => 'http://wee.huandong.xh',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '16',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+  'ag_id' => '1',
+  'ans_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `ansp_id` FROM `admin_nav_sub_permission` WHERE  `ans_id` = 6  AND `ag_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `admin_nav_sub_permission` (`ans_id` , `ag_id`) VALUES (6 , 1) [ RunTime:0.189000s ]
+---------------------------------------------------------------
+[2021-01-23T17:50:17+08:00] 127.0.0.1 GET wee.huandong.xh/cms
+[运行时间：0.078000s] [吞吐率：12.82req/s] [内存消耗：4,415.62kb] [文件加载：102]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms',
+  'route' => 'admin/page/commonPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\xiangmu\huadongyiyao\template\admin\common.html [ array (
+  0 => 'name',
+  1 => 'navs',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `an`.`an_id`,`an`.`name`,`an`.`icon` FROM `admin_nav_permission` `anp` LEFT JOIN `admin_nav` `an` ON `anp`.`an_id`=`an`.`an_id` WHERE  `anp`.`ag_id` = '1' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_nav_sub_permission` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '1' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '2' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '3' ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '5' ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `ans`.`ans_id`,`ans`.`name`,`ans`.`url`,`ans`.`icon` FROM `admin_nav_sub_permission` `ansp` LEFT JOIN `admin_nav_sub` `ans` ON `ansp`.`ans_id`=`ans`.`ans_id` WHERE  `ansp`.`ag_id` = '1'  AND `ans`.`an_id` = '6' ORDER BY `sort` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[2021-01-23T17:50:17+08:00] 127.0.0.1 GET wee.huandong.xh/cms/index
+[运行时间：0.076000s] [吞吐率：13.16req/s] [内存消耗：4,391.70kb] [文件加载：106]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'cms/index',
+  'route' => 'admin/page/indexPage',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7m79ft17knat1cjaprvsf863mi',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://wee.huandong.xh/cms',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'wee.huandong.xh',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016000s ] mysql:host=localhost;dbname=huadongyiyao;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'huadongyiyao.goods' doesn't exist[D:\xiangmu\huadongyiyao\thinkphp\library\think\db\Connection.php:1373]
+---------------------------------------------------------------
+[2021-01-23T17:50:19+08:00] 127.0.0.1 GET wee.huandong.xh/cms/internaluser
+[运行时间：0.027000s] [吞吐率：37.04req/s] [内存消耗：2,076.23kb] [文件加载：76]
+[ info ] [ LANG ] D:\xiangmu\huadongyiyao\thinkphp\lang\zh-cn.php

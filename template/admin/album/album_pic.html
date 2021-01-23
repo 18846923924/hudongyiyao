@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>{$name}图库</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <input type="number" name="a_id" value="{$a_id}" hidden>
+                            <a class="layui-btn" id="album_pic">上传</a>
+                            <button type="submit" class="layui-btn layui-btn-danger" lay-submit="" lay-filter="del_pic">删除选中</button>
+                            <div class="img-tab">
+                                {volist name="pics" id="vo"}
+                                <div class="img-item" >
+                                    <div class="img-div">
+                                        <div >
+                                            <img src="__uploads__/{$vo.pic}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="img-text">
+                                        <p>{$vo.pic_name}</p>
+                                        <p>{$vo.width}*{$vo.height}&emsp;{:round($vo.size/1024)} kb</p>
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-inline">
+                                                <input type="checkbox" name="ap_id[]" value="{$vo.ap_id}" lay-skin="primary">
+                                                <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="delPic('{$vo.ap_id}','{$a_id}','{$vo.pic}',this)">删除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </form>
+                        {$pics|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['upload', 'layer','form'], function () {
+        var upload = layui.upload,
+            layer = layui.layer,
+            form = layui.form
+        form.on('submit(del_pic)',function (data) {
+            var _data = data.field
+            layer.confirm('确定删除选中项？',{btn:'确定',title:'请确认'},function () {
+                var load_index = layer.load(1, {
+                    shade: [0.5,'#000'] //0.1透明度的背景
+                });
+                $.ajax({
+                    type : "post",
+                    url : adminOrigin() + "album/pic/del/batch",
+                    data : _data,
+                    success : function(res) {
+                        res = JSON.parse(res)
+                        if(res.code==0){
+                            layer.msg('操作成功',{
+                                time:500,
+                            },function () {
+                                location.reload()
+                            })
+                        }
+                        else
+                            layer.msg(res.msg)
+                        layer.close(load_index)
+                    },
+                    error : function () {
+                        layer.msg('网络异常')
+                        layer.close(load_index)
+                    }
+                })
+            })
+            return false
+        })
+        upload.render({
+            elem: '#album_pic'
+            , url: '/cms/api/album/upload'
+            ,multiple:true
+            , data: {
+                a_id: '{$a_id}'
+            }
+            , done: function (res) {
+                //如果上传失败
+                if (res.code > 0) {
+                    layer.msg(res.msg, {offset: 't'});
+                    return false
+                }
+                layer.msg('上传成功', {
+                });
+                var pic = res.data.save_name
+                var pic_name = res.data.name
+                var width = res.data.width
+                var height = res.data.height
+                var ap_id = res.data.ap_id
+
+                var str = ''
+                str += '<div class="img-item" ondblclick="">'
+                str += '<div class="img-div">'
+                str += '<div>'
+                str += '<img src="__uploads__/'+pic+'" alt="">'
+                str += '</div>'
+                str += '</div>'
+                str += '<div class="img-text">'
+                str += '<p>'+pic_name+'</p>'
+                str += '<span>'+width+'*'+height+'</span>'
+                str += '<button class="layui-btn layui-btn-xs layui-btn-danger" onclick="delPic(\''+ap_id+'\',\'{$a_id}\',\''+pic+'\',this)">删除</button>'
+                str += '</div>'
+                str += '</div>'
+                $('.img-tab').append(str)
+            }
+        });
+    })
+    function delPic(ap_id,a_id,pic,obj) {
+        layer.confirm('确定删除？',{offset:'t'},function () {
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "album/pic/del",
+                data : {
+                    ap_id:ap_id,
+                    a_id:a_id,
+                    pic:pic
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+            return false
+        })
+    }
+</script>
+</body>
+</html>

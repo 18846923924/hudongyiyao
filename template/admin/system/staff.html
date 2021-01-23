@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>人事管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="name" value="{$name}" placeholder="请输入账户名" class="layui-input">
+                                </div>
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">搜索</button>
+                                <a class="layui-btn layui-btn-normal" onclick="addUser()">新增用户</a>
+                            </div>
+                        </form>
+
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <td>用户名</td>
+                                <td>昵称</td>
+                                <td>分组</td>
+                                <td>状态</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="staffs" id="vo" empty="<tr><td colspan=5>暂无数据</td></tr>"}
+                            <tr>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.nickname}</td>
+                                <td>{$vo.group_name}</td>
+                                <td>
+                                    {eq name="vo.status" value="1"}
+                                    <button class="layui-btn layui-btn-xs" onclick="changeStatus('{$vo.au_id}',0,'锁定后用户将不可登录')">正常</button>
+                                    {else\}
+                                    <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="changeStatus('{$vo.au_id}',1,'解锁后用户可恢复登录')">锁定</button>
+                                    {/eq}
+                                </td>
+                                <td>
+                                    <button class="layui-btn layui-btn-xs" onclick="initPwd('{$vo.au_id}')">密码重置</button>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$staffs|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user_add_modal" hidden>
+    <br>
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">分组</label>
+            <div class="layui-input-inline">
+                <select name="ag_id" lay-filter="ag_id" lay-verify="required" lay-reqtext="请选择分组" >
+                    <option value="">请选择分组</option>
+                    {volist name="groups" id="vo"}
+                    <option value="{$vo.ag_id}">{$vo.name}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">省份</label>
+            <div class="layui-input-inline">
+                <select name="ag_id" lay-filter="ag_id" lay-verify="required" lay-reqtext="请选择省份" lay-search>
+                    <option value="">请选择省份</option>
+                    {volist name="province" id="vo"}
+                    <option value="{$vo.p_code}">{$vo.name}</option>
+                    {/volist}
+            </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账户</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" lay-verify="required" lay-reqtext="请输入用户名" placeholder="请输入" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="pwd" id="pwd" lay-verify="required" lay-reqtext="请输入用户密码" placeholder="请输入" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <i class="layui-icon" onclick="randomPwd()">&#xe669;</i>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="nickname" lay-verify="required" lay-reqtext="请输入昵称" placeholder="请输入" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="add_user">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+        form.on('submit(add_user)',function (data) {
+            var _data = data.field
+            _data.pwd = hex_md5(_data.pwd)
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "staff/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500
+                        },function () {
+                            location.reload()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+            return false
+        })
+    })
+
+    function changeStatus(au_id,status,title) {
+        layer.confirm(title,function () {
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "staff/status",
+                data : {
+                    au_id:au_id,
+                    status:status
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500
+                        },function () {
+                            location.reload()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+        })
+    }
+
+    function initPwd(au_id) {
+        layer.confirm('密码将重置为123456，请尽快修改密码',function () {
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "init/pwd/"+au_id,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+        })
+    }
+
+    function addUser() {
+        layer.open({
+            type: 1,
+            offset:'t',
+            title:'新增用户',
+            content:$('.user_add_modal'),
+            shadeClose:true,
+            area:['450px','400px'],
+            shade: [0.8, '#393D49'],
+        })
+    }
+
+    function randomPwd() {
+        $('#pwd').val(randomStr(6))
+    }
+</script>
+</body>
+</html>

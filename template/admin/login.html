@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="__static__/hplus_ui/favicon.ico" type="image/x-icon">
+    <link href="__static__/css/login.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="__static__/tn/style.css" media="all">
+    <script src="__static__/js/jquery-3.3.1.min.js"></script>
+    <script src="__static__/js/common_zhb.js"></script>
+    <script src="__static__/js/md5.js"></script>
+    <link rel="stylesheet" href="__static__/layui/css/layui.css" media="all">
+    <script src="__static__/layui/layui.js"></script>
+    <script type="text/javascript" src="__static__/tn/tn_code.js?v1"></script>
+    <title>weetop网站后台管理系统WEB2.0</title>
+</head>
+<body>
+<div class="body">
+    <div class="top">
+        <div class="top1"><img src="__static__/img/top1.jpg"/></div>
+        <div class="top2">
+            <div class="top2_1"><img src="__static__/img/top1_1.jpg"></div>
+            <div class="top2_2"><img src="__static__/img/top2.jpg"/></div>
+        </div>
+    </div>
+
+    <div class="zhong">
+        <div class="zhong1"><img src="__static__/img/zhongzuo.jpg"></div>
+        <div class="zhong2">
+            <table width="275" border="0" cellpadding="0" cellspacing="0" class="zhong2_1">
+                <tr>
+                    <td width="64" align="right" style="padding:5px;">
+                        <img src="__static__/img/yonghuming.jpg"/>
+                    </td>
+                    <td width="211" style="padding:5px;">
+                        <input name="account" id="account" type="text" style="width:170px; height:18px;"></td>
+                </tr>
+                <tr>
+                    <td align="right" style="padding:5px;">
+                        <img src="__static__/img/mima.jpg"/>
+                    </td>
+                    <td style="padding:5px;">
+                        <input name="password" id="pwd" type="password" style="width:170px; height:18px;"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="zhong3">
+            <input name="" id='denglu' onclick="return bindTncode(this);" type="submit" value="" class="tncode"
+                   style="width:52px; height:52px;cursor: pointer; background:url(__static__/img/login.jpg) no-repeat; border:0px;">
+        </div>
+    </div>
+
+    <div class="bottom">后台技术支持：<a href="http://www.zjteam.com" target="_blank">帷拓科技</a></div>
+</div>
+</body>
+<script>
+    var $TN
+    document.onkeydown = function (e) { // 回车提交表单
+        var theEvent = window.event || e;
+        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+        if (code == 13) {
+            document.getElementById('denglu').click()
+        }
+    }
+
+    function bindTncode(obj){
+        var account = $('#account').val();
+        var pwd = hex_md5($('#pwd').val());
+        if (account == '')
+            return layer.msg('请输入用户名');
+        if (pwd == '')
+            return layer.msg('请输入密码');
+        if($TN == undefined){
+            $TN = tncode;
+            $TN.init()
+            $(obj).click()
+        }else{
+            $TN.onsuccess(function () {
+                //验证通过
+                check()
+            });
+        }
+    }
+
+    layui.use(['layer'],function () {})
+    function check() {
+        var account = $('#account').val();
+        var pwd = hex_md5($('#pwd').val());
+        if (account == '')
+            return layer.msg('请输入用户名');
+        if (pwd == '')
+            return layer.msg('请输入密码');
+        $.ajax({
+            type : "post",
+            url :adminOrigin()+'login',
+            data : {
+                account:account,
+                pwd:pwd,
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('登录成功',{
+                        time:500
+                    },function () {
+                        window.location.href='/cms';
+                    })
+                }
+                else{
+                    layer.msg(res.msg)
+                    $('#yzm').click()
+                }
+
+            },
+            error : function () {
+                layer.msg('网络异常')
+            }
+        })
+
+    }
+</script>
+</html>

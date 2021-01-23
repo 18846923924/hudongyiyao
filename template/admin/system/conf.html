@@ -1,0 +1,54 @@
+{include file="/admin/style"/}
+<blockquote class="layui-elem-quote"><h2>配置项 <i class="layui-icon" onclick="location.reload()">&#xe669;</i></h2></blockquote>
+<!-- 内容主体区域 -->
+<div style="padding:  0px 15px 0px 15px;">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>描述</th>
+            <th>内容</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr>-->
+<!--            <td>每支付1元获得的积分数量</td>-->
+<!--            <td>-->
+<!--                <input type="number" class="layui-input  layui-input-inline" value="" onchange="editConf('money_to_credits',this)">-->
+<!--            </td>-->
+<!--        </tr>-->
+
+        </tbody>
+    </table>
+</div>
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+    })
+    function editConf(key,obj) {
+        let val = $(obj).val()
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "conf/edit",
+            data : {
+                key:key,
+                val:val
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                        offset:'t'
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+            }
+        })
+    }
+</script>

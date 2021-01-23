@@ -1,0 +1,208 @@
+{include file="web/common/top" /}
+<body>
+	{include file="web/common/header" /}
+	<div class="swiper-container in_banner">
+		<div class="swiper-wrapper">
+			{if $banner}
+			{volist name="banner" id="bv"}
+			<div class="swiper-slide" style="background-image: url(__uploads__/{$bv.pic})">
+				<a href="{$bv.url ?? 'javascript:;'}">
+				<div class="phone"><img src="__static__/web/images/index_01.jpg"></div>
+				<div class="container">
+					<h2>{$bv.title}</h2>
+					<b></b>
+					<h3>{$bv.retitle}</h3>
+				</div>
+				</a>
+			</div>
+			{/volist}
+			{else}
+			<div class="swiper-slide" style=" background-image: url(__static__/web/images/index_01.jpg)">
+				<div class="phone"><img src="__static__/web/images/index_01.jpg"></div>
+				<div class="container">
+					<h2>旅游贸易房产开发三向领导者</h2>
+					<b></b>
+					<h3>Three way leader in tourism trade</h3>
+				</div>
+			</div>
+			<div class="swiper-slide" style=" background-image: url(__static__/web/images/index_01.jpg)">
+				<div class="phone"><img src="__static__/web/images/index_01.jpg"></div>
+				<div class="container">
+					<h2>旅游贸易房产开发三向领导者</h2>
+					<b></b>
+					<h3>Three way leader in tourism trade</h3>
+				</div>
+			</div>
+			{/if}
+		</div>
+		<div class="swiper-pagination in_banner_pagination"></div>
+		<div class="down_btn"><a href="#dingwei"><em></em><span>scroll down</span></a></div>
+		<div class="down_btn1">
+
+		</div>
+
+	</div>
+	<script>
+		var swiper = new Swiper('.in_banner', {
+			loop: true,
+			autoHeight: true,
+			autoplay: {
+				delay: 6000, //6秒切换一次
+			},
+			pagination: {
+				el: '.in_banner_pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				320: { //当屏幕宽度大于等于320
+					autoHeight: true,
+				},
+				960: { //当屏幕宽度大于等于960
+					autoHeight: false,
+				},
+			}
+		});
+	</script>
+	<div name="dingwei" class="dingwei"></div>
+	<div class="in_box">
+		<div class=" container">
+			<div class="left">
+				{if $info.picurl}
+				<img src="__uploads__/{$info.picurl}" alt="{$info.title}" title="{$info.title}">
+				{else}
+				<img src="__static__/images/index_04.jpg" alt="{$info.title}" title="{$info.title}">
+				{/if}
+			</div>
+			<div class="right">
+				<div class="bt">
+					<h2>{$info.title}</h2>
+					<h3>{$info.retitle}</h3>
+				</div>
+				<div class="nr">
+					{$info.content|raw}
+					<span><a href="{:url('/about')}">-- learn more</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="in_box1">
+		<div class="bt">
+			<h2>JIANBIN</h2>
+			<h3>产业介绍</h3>
+			<p>Industry introduction</p>
+		</div>
+		<div class="in_box1_nr">
+			<div class="bd">
+				{volist name="$gdata" id="v"}
+				<div class="swiper-container" style="min-height: 260px;">
+					<div class="swiper-wrapper">
+						{if $v.goods != ''}
+							{volist name="$v.goods" id="gv" empty=""}
+							<div class="swiper-slide">
+								<a href="{:url('/InDetail')}?id={$gv.g_id}">
+									<div class="img" style="background-image: url(__uploads__/{$gv.picurl});">
+										<img src="__static__/web/images/index_08.png" alt="{$gv.title}" title="{$gv.title}">
+										</div>
+									<div class="nr">
+										<h2><span>-- learn more</span>Tourism project </h2>
+										<h3>{$gv.title}</h3>
+									</div>
+								</a>
+							</div>
+							{/volist}
+						{else}
+							<div class="swiper-slide">
+								<a href="javascript:;">
+									<div class="img" style="background-image: url(__static__/images/index_08.jpg);"><img
+											src="__static__/images/index_08.png"></div>
+									<div class="nr">
+										<h2><span>-- learn more</span>Tourism project </h2>
+										<h3>{$v.title}分类下暂无相关产品</h3>
+									</div>
+								</a>
+							</div>
+						{/if}
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				{/volist}
+
+			</div>
+			<div class="hd">
+				<ul>
+					{volist name="$gdata" id="v" key="k"}
+					{if $k == 1}
+					<li><i class="ly"></i>{$v.title}</li>
+					{elseif $k == 2}
+					<li><i class="my"></i>{$v.title}</li>
+					{elseif $k == 3}
+					<li><i class="kf"></i>{$v.title}</li>
+					{/if}
+					{/volist}
+					<h2></h2>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			jQuery(".in_box1_nr").slide({
+				trigger: "click"
+			});
+		</script>
+
+		<script>
+			var swiper = new Swiper('.in_box1_nr .swiper-container', {
+				autoplay: {
+					delay: 5000,
+				},
+				loop: true,
+				centeredSlides: false,
+				slidesPerView: 'auto',
+				observer: true,
+				navigation: {
+					nextEl: '.in_box1_nr .swiper-button-next',
+					prevEl: '.in_box1_nr .swiper-button-prev',
+				},
+				breakpoints: {
+					960: {
+						centeredSlides: true,
+					}
+				}
+			});
+		</script>
+
+
+	</div>
+
+	<div class="in_box2">
+		<div class=" container">
+			<div class="bt">最新资讯<b></b></div>
+			<div class="nr">
+				<ul class=" clearfix">
+					{volist name="$news" id="vo"}
+					<li>
+						<a href="{:url('/Detail')}?id={$vo.n_id}">
+							<div class="img" style="background-image: url(__uploads__/{$vo.picurl});">
+								<img src="__static__/web/images/index_12.png" alt="{$vo.title}" title="{$vo.title}">
+							</div>
+							<div class="wz">
+								<h2>{$vo.title}</h2>
+								<h3><b></b>
+									<p>{if $vo.description}{$vo.description}{else}{$vo.content|strip_tags}{/if}</p>
+								</h3>
+								<span>{$vo.cname}</span>
+							</div>
+						</a>
+					</li>
+					{/volist}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	{include file="web/common/bot" /}
+
+</body>
+
+</html>

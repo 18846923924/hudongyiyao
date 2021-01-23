@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>友情链接</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="name" value="{$name ?? ''}" placeholder="请输入友情链接名称" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">搜索</button>
+                                </div>
+                                <a class="layui-btn layui-btn-primary" onclick="addCat(0)">新增</a>
+                                <a href="/cms/link" class="layui-btn">刷新</a>
+                            </div>
+                        </form>
+                        
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>图片</th>
+                                <th>排序</th>
+                                <th>展示状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="data" id="vo" empty="<tr><td colspan=5>暂无数据</td></tr>"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.title}</td>
+                                <td><img src="__uploads__/{$vo.picurl}" height="60px" alt="" onerror="this.src='__uploads__/error.jpg'"></td>
+                                <td>
+                                    <input type="number" class="layui-input sort-input" value="{$vo.sort}" onchange="catSort('{$vo.id}',this)">
+                                </td>
+                                <td align="center">
+                                    {eq name="vo.checkinfo" value="1"}
+                                    <img src="__static__/no.png" onclick="goodsCatBoo('{$vo.id}',1,'status',this)" style="display: none">
+                                    <img src="__static__/yes.png" onclick="goodsCatBoo('{$vo.id}',0,'status',this)">
+                                    {else\}
+                                    <img src="__static__/no.png" onclick="goodsCatBoo('{$vo.id}',1,'status',this)">
+                                    <img src="__static__/yes.png" onclick="goodsCatBoo('{$vo.id}',0,'status',this)" style="display: none">
+                                    {/eq}
+                                </td>
+                                <td>
+                                    <a class="layui-btn layui-btn-xs" onclick="addCat(1,'{$vo}')">修改</a>
+                                    <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="delCat('{$vo.id}',this)">删除</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                         {$data|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="goods_cat_add_modal" hidden>
+    <div style="padding: 15px;">
+        <form class="layui-form" action="" lay-filter="car_form">
+            <input type="number" name="id" hidden>
+            <div class="layui-form-item">
+                <label class="layui-form-label">图片：</label>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('picurl',1)"><i
+                            class="layui-icon"></i>选择图片
+                    </button>
+                    <span class="pic_span_picurl">
+                    </span>
+                </div>
+                <label class="layui-form-label"></label>
+                <!-- <div class="layui-form-mid layui-word-aux">建议尺寸：310px x 210px</div> -->
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" lay-verify="required" lay-reqtext="请输入名称" class="layui-input" maxlength="150">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-block">
+                    <input type="number" name="sort" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">跳转链接</label>
+                <div class="layui-input-block">
+                    <input type="text" name="linkurl" lay-verify="required" lay-reqtext="请输入名称" class="layui-input" maxlength="250">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">审核</label>
+                <div class="layui-input-block">
+                    <select name="show_index">
+                        <option value="">是否显示</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="add_goods_cat">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{include file="/admin/footer"/}
+{include file="/admin/album/open"/}
+<script>
+    var form
+    layui.use(['form','layer'], function() {
+        form = layui.form
+        form.on('submit(add_goods_cat)',function (data) {
+            var _data = data.field
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "link/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                            offset:'t'
+                        },function () {
+                            location.reload()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg,{offset:'t'})
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常',{offset:'t'})
+                    layer.close(load_index)
+                }
+            })
+            return false
+        })
+    })
+    function delCat(id,obj) {
+        layer.confirm('确定删除此友情链接',{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "link/del",
+                data : {
+                    id:id
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                            offset:'t'
+                        },function () {
+                            $(obj).parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function goodsCatBoo(id,status,content,obj) {
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "link/status",
+            data : {
+                id:id,
+                status:status,
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    $(obj).hide()
+                    if(status == 1)
+                        $(obj).next().show()
+                    else
+                        $(obj).prev().show()
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+            }
+        })
+    }
+    function catSort(id,obj) {
+        let sort = $(obj).val()
+        var load_index = layer.load(1, {
+            shade: [0.5,'#000'] //0.1透明度的背景
+        });
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "link/sort",
+            data : {
+                id:id,
+                sort:sort
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                        offset:'t'
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+                layer.close(load_index)
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+                layer.close(load_index)
+            }
+        })
+    }
+
+    function addCat(is_edit,obj) {
+        layer.open({
+            type: 1,
+            title:'分类编辑',
+            content:$('.goods_cat_add_modal'),
+            shadeClose:true,
+            area:['50%','auto'],
+            shade: [0.8, '#393D49'],
+            success: function () {
+                var str_picurl = ''
+                if(is_edit) {
+                    obj = JSON.parse(obj)
+                    form.val('car_form',{
+                        "id":obj.id
+                        ,"title":obj.title
+                        ,"sort":obj.sort
+                        ,"checkinfo":obj.checkinfo
+                        ,"linkurl":obj.linkurl
+                    })
+                    str_picurl += '<span><img oncontextmenu="rightBtn(this)" ondblclick="delThisPic(this)" class="layui-upload-img" src="__uploads__/'+obj.picurl+'" height="60px">'
+                    str_picurl += '<input style="display: none;" type="text" name="picurl"  value="'+obj.picurl+'" class="layui-input"></span>'
+                }else {
+                    form.val('car_form',{
+                        "id":0
+                        ,"title":''
+                        ,"sort":''
+                        ,"checkinfo":1
+                        ,"linkurl":''
+                    })
+                }
+                $('.pic_span_picurl').html(str_picurl)
+            }
+        })
+    }
+</script>
+</body>
+</html>

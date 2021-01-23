@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>网站配置</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            {volist name="$data" id="v"}
+                            {if $v.varname == 'cfg_logo'}
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{$v.varinfo}：</label>
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('{$v.varname}',1)"><i
+                                            class="layui-icon"></i>选择图片
+                                    </button>
+                                    <span class="pic_span_{$v.varname}">
+                                        <span><img oncontextmenu="rightBtn(this)" ondblclick="delThisPic(this)" class="layui-upload-img" src="__uploads__/{$v.varvalue}" height="100px">
+                                        <input style="display: none;" type="text" name="{$v.varname}"  value="{$v.varvalue}" class="layui-input"></span>
+                                    </span>
+                                </div>
+                                <label class="layui-form-label"></label>
+                            </div>
+                            {elseif $v.varname == 'cfg_mlogo2'}
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{$v.varinfo}：</label>
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('{$v.varname}',1)"><i
+                                            class="layui-icon"></i>选择图片
+                                    </button>
+                                    <span class="pic_span_{$v.varname}">
+                                        <span><img oncontextmenu="rightBtn(this)" ondblclick="delThisPic(this)" class="layui-upload-img" src="__uploads__/{$v.varvalue}" height="100px">
+                                        <input style="display: none;" type="text" name="{$v.varname}"  value="{$v.varvalue}" class="layui-input"></span>
+                                    </span>
+                                </div>
+                                <label class="layui-form-label"></label>
+                            </div>
+                            {elseif $v.varname == 'cfg_mlogo'}
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{$v.varinfo}：</label>
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('{$v.varname}',1)"><i
+                                            class="layui-icon"></i>选择图片
+                                    </button>
+                                    <span class="pic_span_{$v.varname}">
+                                        <span><img oncontextmenu="rightBtn(this)" ondblclick="delThisPic(this)" class="layui-upload-img" src="__uploads__/{$v.varvalue}" height="100px">
+                                        <input style="display: none;" type="text" name="{$v.varname}"  value="{$v.varvalue}" class="layui-input"></span>
+                                    </span>
+                                </div>
+                                <label class="layui-form-label"></label>
+                            </div>
+                            {else}
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{$v.varinfo}：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="{$v.varname}" value="{$v.varvalue}" lay-verify="required" lay-reqtext="请输入{$v.varinfo}" class="layui-input" maxlength="250">
+                                </div>
+                            </div>
+
+                            {/if}
+                            {/volist}
+                            
+                          
+                         <!--    <div class="layui-form-item" style="display: none;">
+                                <label class="layui-form-label">展    示：</label>
+                                <div class="layui-input-block">
+                                    <select name="">
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div> -->
+
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="add_goods">立即提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+{include file="/admin/album/open"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+        form.on('submit(add_goods)',function (data) {
+            var _data = data.field
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "config/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            window.location.href = '/cms/config'
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+            return false
+        })
+    })
+    var ue = UE.getEditor('editor',{
+    textarea:'content',
+    zIndex:1
+    });
+</script>
+</body>
+</html>

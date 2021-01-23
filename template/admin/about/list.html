@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>产品管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <a style="display: none;"  href="/cms/about/add"  class="layui-btn layui-btn-primary" >新增</a>
+                                <a href="/cms/about" class="layui-btn">刷新</a>
+                            </div>
+                        </form>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>文章ID</th>
+                                <th>标题</th>
+                                <th>图片</th>
+                                <th style="width: 200px">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="data" id="vo" empty="<tr><td colspan=11>暂无数据</td></tr>"}
+                            <tr>
+                                <td>{$vo.a_id}</td>
+                                <td>{$vo.title}</td>
+                                <td><img src="__uploads__/{$vo.picurl}" height="60px" alt="" onerror="this.src='__uploads__/error.jpg'"></td>
+                                <td>
+                                    <p>
+                                        <a href="/cms/about/edit/{$vo.a_id}" class="layui-btn layui-btn-xs">修改</a>
+                                        <a style="display: none;" class="layui-btn layui-btn-xs layui-btn-danger" onclick="delabout('{$vo.a_id}',this)">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$data|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+
+    })
+    function delabout(g_id,obj) {
+        layer.confirm('确定删除此文章',{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "about/del",
+                data : {
+                    g_id:g_id
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function aboutSort(g_id,obj) {
+        let sort = $(obj).val()
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "about/sort",
+            data : {
+                g_id:g_id,
+                sort:sort
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg)
+            },
+            error : function () {
+                layer.msg('网络异常')
+            }
+        })
+    }
+    function aboutBoo(g_id,status,content,obj) {
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "about/status",
+            data : {
+                g_id:g_id,
+                status:status,
+                content:content
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    $(obj).hide()
+                    if(status == 1)
+                        $(obj).next().show()
+                    else
+                        $(obj).prev().show()
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+            }
+        })
+    }
+</script>
+</body>
+</html>

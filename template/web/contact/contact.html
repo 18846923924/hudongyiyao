@@ -1,0 +1,208 @@
+{include file="web/common/top"}
+<link href="__static__/layui/css/layui.css" rel="stylesheet">
+<script src="__static__/hplus_ui/js/plugins/layer/layer.min.js"></script>
+<body>
+
+	{include file="web/common/header"}
+	{if $banner}
+	<div class="ny_banner" style="background-image: url(__uploads__/{$banner.pic});">
+		<div class="text">
+			{$banner.title}
+			<p>{$banner.retitle}</p>
+		</div>
+	</div>
+	{else}
+	<div class="ny_banner" style="background-image: url(__static__/web/images/contact_banner.jpg);">
+		<div class="text">联系我们
+			<p>-Contact Us-</p>
+		</div>
+	</div>
+	{/if}
+
+	<div class="contact">
+		<div class=" container">
+			<div class="lj"><a href="{:url('/')}">首页</a> &#155 联系我们</div>
+			<div class="map">
+				<div id="map"></div>
+				<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=KTEzC0OzjBzBDfunSz8PkKD5"></script>
+					<script type="text/javascript">
+						//创建和初始化地图函数：
+						function initMap(){
+						  createMap();//创建地图
+						  setMapEvent();//设置地图事件
+						  addMapControl();//向地图添加控件
+						  addMapOverlay();//向地图添加覆盖物
+						}
+						function createMap(){ 
+						  map = new BMap.Map("map"); 
+						  map.centerAndZoom(new BMap.Point({$cfg_lng},{$cfg_lat}),13);
+						}
+						function setMapEvent(){
+						  map.enableKeyboard();
+						  map.enableDragging();
+						  map.enableDoubleClickZoom()
+						}
+						function addClickHandler(target,window){
+						  target.addEventListener("click",function(){
+							target.openInfoWindow(window);
+						  });
+						}
+						function addMapOverlay(){
+						  var markers = [
+							{content:"{$cfg_webadd}",title:"{$webname}",imageOffset: {width:-23,height:-21},position:{lat:{$cfg_lat},lng:{$cfg_lng}}}
+						  ];
+						  for(var index = 0; index < markers.length; index++ ){
+							var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+							var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+							  imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+							})});
+							var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+							var opts = {
+							  width: 200,
+							  title: markers[index].title,
+							  enableMessage: false
+							};
+							var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+							marker.setLabel(label);
+							addClickHandler(marker,infoWindow);
+							map.addOverlay(marker);
+						  };
+						}
+						//向地图添加控件
+						function addMapControl(){
+						  var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+						  scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+						  map.addControl(scaleControl);
+						  var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:1});
+						  map.addControl(navControl);
+						  var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:false});
+						  map.addControl(overviewControl);
+						}
+						var map;
+						  initMap();
+					  </script>
+			</div>
+			<!-- <form method="post" action=""> -->
+				<div class="lx">
+					<div class="nr">
+						<h2>浙江建滨实业有限公司</h2>
+						<p><i class="fa fa-phone"></i>联系电话：{$cfg_hotline}</p>
+						<p><i class="fa fa-envelope"></i>集团邮箱：{$email}</p>
+						<p><i class="fa fa-map-marker"></i>集团地址：{$cfg_webadd}</p>
+					</div>
+					<div class="nr1">
+						<input type="text" id="name" name="name" class="text" required="" maxlength="30" placeholder="姓名">
+						<input type="text" id="tel" name="tel" class="text" required=""  maxlength="30" placeholder="电话">
+						<input type="text" id="address" name="address" class="text" required=""  maxlength="200" placeholder="地址">
+						<input type="text" id="email" name="email" class="text" required="" maxlength="40" placeholder="邮箱">
+						<textarea class="text1" id="content" name="content" placeholder="留言" maxlength="250"></textarea>
+						<button class="atn" onclick="tijiao()">提交</button>
+					</div>
+				</div>
+			<!-- </form> -->
+		</div>
+	</div>
+	<script>
+   		function tijiao(){
+	        if ($("#name").val() == ''){
+	            alert("请输入您的姓名！");
+	            $("#name").focus();
+	            return false;
+	        }
+	        if ($("#tel").val() == ''){
+	            alert("请输入电话！");
+	            $("#tel").focus();
+	            return false;
+	        }
+	        if ($("#address").val() == ''){
+	            alert("请输入地址！");
+	            $("#address").focus();
+	            return false;
+	        }
+	    
+	        if ($("#email").val() == ''){
+	            alert("请输入您的邮箱！");
+	            $("#email").focus();
+	            return false;
+	        }else{
+	            var re=/^\w+@[a-z0-9]+\.[a-z]{2,4}$/;
+	            if(!re.test($("#email").val())){
+	                alert("请输入正确的邮箱号！");
+	                $("#email").focus();
+	                return false;
+	            }
+	        }
+	        $.ajax({
+                type : "post",
+                url : "{:url('/message')}",
+                data : {
+                    name:$("#name").val(),
+                    tel:$("#tel").val(),
+                    address:$("#address").val(),
+                    email:$("#email").val(),
+                    content:$("#content").val()
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('留言操作成功',{
+                            time:500,
+                            offset:'t'
+                        },function () {
+                            window.location.reload();
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+	    }
+	</script>
+	
+	{include file="web/common/bot" /}
+
+	<script>
+		var swiper = new Swiper('.about_gsry_nr', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				960: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+
+				1260: {
+					slidesPerView: 5,
+					spaceBetween: 40,
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="__static__/web/css/colorbox.css" />
+	<script src="__static__/web/js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Examples of how to assign the Colorbox event to elements
+			$(".group1").colorbox({
+				rel: 'group1',
+				maxWidth: false,
+				width: "75%",
+				height: "auto"
+			});
+		});
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>文章编辑</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">图片：</label>
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('picurl',1)"><i class="layui-icon"></i>选择图片
+                                    </button>
+                                    <span class="pic_span_picurl">
+                                    </span>
+                                </div>
+                                <label class="layui-form-label"></label>
+                            </div>
+                            <input type="hidden" name="a_id" value="{$data.a_id ?? ''}">
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">标题：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="title" lay-verify="required" lay-reqtext="请输入标题" class="layui-input" maxlength="250" value="{$data.title ?? ''}">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">副标题：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="retitle" lay-verify="required" lay-reqtext="请输入副标题" class="layui-input" maxlength="250" value="{$data.retitle ?? ''}">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">详情内容：</label>
+                                <div class="layui-input-block">
+                                    <script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
+                                </div>
+                            </div>                        
+
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="add_about">立即提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+{include file="/admin/album/open"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+        form.on('submit(add_about)',function (data) {
+            var _data = data.field
+            console.log(_data);
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "about/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            window.location.href = '/cms/about'
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+            return false
+        })
+
+
+    })
+    var ue = UE.getEditor('editor',{
+    textarea:'content',
+    zIndex:1
+    });
+    {if $data.content ?? ''}
+    ue.addListener("ready", function () {
+        ue.setContent('{$data.content|raw}');
+    });
+    {/if}
+    
+     
+</script>
+</body>
+</html>

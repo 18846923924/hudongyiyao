@@ -1,0 +1,9 @@
+555     系统内部错误
+666     参数错误ParamErr
+777     请先绑定支付宝账户
+888     强制下线UserOff
+999     请先设置交易密码
+1000    通用异常CommonException
+1001    权限不足PermissionLimit
+1002    图形验证码错误VerifyCodeErr
+1003    文件上传失败FileUploadErr

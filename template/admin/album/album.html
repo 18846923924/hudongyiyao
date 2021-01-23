@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>相册管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <button class="layui-btn" onclick="addAlbum()">新增相册</button>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>相册名称</th>
+                                <th>图片数量</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="albums" id="vo" empty="<tr><td colspan=3>暂无数据</td></tr>"}
+                            <tr>
+                                <td><input type="text" value="{$vo.name}" class="layui-input" onchange="albumName('{$vo.a_id}',this)"></td>
+                                <td>{$vo.pic_num}</td>
+                                <td>
+                                    <a href="/cms/album/pic/{$vo.a_id}?name={$vo.name}" class="layui-btn layui-btn-xs">查看图库</a>
+                                    <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="delAlbum('{$vo.a_id}','{$vo.pic_num}',this)">删除</button>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="album_add_modal" hidden>
+    <div style="padding: 15px;">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="add_album">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+        form.on('submit(add_album)',function (data) {
+            var _data = data.field
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "album/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            location.reload()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+            return false
+        })
+    })
+    function addAlbum() {
+        layer.open({
+            type: 1,
+            title:'新增相册',
+            content:$('.album_add_modal'),
+            shadeClose:true,
+            area:['auto','auto'],
+            shade: [0.8, '#393D49'],
+        })
+    }
+    function delAlbum(a_id,pic_num,obj) {
+        if(pic_num>0){
+            layer.msg('相册下存在图片，不可删除')
+            return false
+        }
+        layer.confirm('确定删除该相册？',function () {
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "album/del/"+a_id,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                }
+            })
+        })
+    }
+    function albumName(a_id,obj) {
+        let name = $(obj).val()
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "album/name",
+            data : {
+                a_id:a_id,
+                name:name
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg)
+            },
+            error : function () {
+                layer.msg('网络异常')
+            }
+        })
+    }
+</script>
+</body>
+</html>

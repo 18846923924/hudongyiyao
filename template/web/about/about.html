@@ -1,0 +1,143 @@
+{include file="web/common/top" /}
+<body>
+	{include file="web/common/header" /}
+	{if $banner}
+	<div class="ny_banner" style="background-image: url(__uploads__/{$banner.pic});">
+		<div class="text">
+			{$banner.title}
+			<p>{$banner.retitle}</p>
+		</div>
+	</div>
+	{else}
+	<div class="ny_banner" style="background-image: url(__static__/web/images/about_banner.jpg);">
+		<div class="text">关于我们
+			<p>-About us-</p>
+		</div>
+	</div>
+	{/if}
+
+	<div class="about">
+		<div class="about_ldgh clearfix">
+			<div class="about_ldgh_left fl">
+				<div class="bt">
+					<h2>{$leader.title}</h2><span>{$leader.retitle}</span>
+				</div>
+				<div class="nr">
+					<p>
+						<img src="__static__/web/images/about_wz.png">
+					</p>
+					{$leader.content|raw}
+				</div>
+			</div>
+			<div class="about_ldgh_right fr clearfix">
+				<img src="__static__/web/images/about_03.png">
+				<h2>
+					{if $leader.picurl}
+					<img src="__uploads__/{$leader.picurl}">
+					{else}
+					<img src="__static__/web/images/about_03.jpg">
+					{/if}
+				</h2>
+				<h3><img src="__static__/web/images/about_05.png"></h3>
+			</div>
+		</div>
+
+		<div class="about_gsjs">
+			<div class="bt">
+				<h2>{$intro.title}</h2><span>{$intro.retitle}</span>
+			</div>
+			<div class="nr">
+				{if $intro.picurl}
+					<img src="__uploads__/{$intro.picurl}">
+				{else}
+					<img src="__static__/web/images/about_12.jpg">
+				{/if}
+				{$intro.content|raw}
+			</div>
+		</div>
+
+		<div class="about_gsry">
+			<div class="bt">
+				<h2>公司荣誉</h2><span>glories of company</span>
+			</div>
+
+			<div class="swiper-container about_gsry_nr">
+				<div class="swiper-wrapper">
+					{volist name="$honorli" id="hv"}
+					<div class="swiper-slide">
+						<a class="group1" href="__static__/web/images/about_17.jpg" title="{$hv.title}">
+							<img src="__uploads__/{$hv.picurl}">
+							<h2>{$hv.title}</h2>
+						</a>
+					</div>
+					{/volist}
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+
+		</div>
+
+		<div class="about_qywh">
+			<div class="bt">
+				<h2>{$culture.title}</h2><span>{$culture.retitle}</span>
+			</div>
+			<div class="about_qywh1 clearfix">
+				<div class="about_qywh1_left fl">
+					{$culture.content|raw}
+				</div>
+				<div class="about_qywh1_right fr">
+					{if $culture.picurl}
+						<img src="__uploads__/{$culture.picurl}">
+					{else}
+						<img src="__static__/web/images/about_20.jpg">
+					{/if}
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	{include file="web/common/bot" /}
+
+	<script>
+		var swiper = new Swiper('.about_gsry_nr', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				960: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+
+				1260: {
+					slidesPerView: 5,
+					spaceBetween: 40,
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="__static__/web/css/colorbox.css" />
+	<script src="__static__/web/js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Examples of how to assign the Colorbox event to elements
+			$(".group1").colorbox({
+				rel: 'group1',
+				maxWidth: false,
+				width: "75%",
+				height: "auto"
+			});
+		});
+	</script>
+
+</body>
+
+</html>

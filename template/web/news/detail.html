@@ -1,0 +1,87 @@
+{include file="web/common/top"}
+
+<body>
+	{include file="web/common/header2"}
+
+	<div class="news_detail">
+		<div class=" container">
+			<div class="lj">	
+				<a href="/">首页</a> &#155 <a href="{:url('/news')}">新闻中心</a> {if $tinfo.title ?? ''}&#155 {$tinfo.title}{/if}
+			</div>
+
+			<div class="news_detail1">
+				<div class="bt">
+					<h2>{$data.title}</h2>
+					<p>{$data.posttime|date="Y/m/d"}</p>
+				</div>
+				<div class="nr">
+					{$data.content|raw}
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="news" style="background: #fff;">
+		<div class=" container">
+			<ul class=" clearfix">
+				{volist name="$tjli" id="tv"}
+				<li>
+					<a href="{:url('/Detail')}?id={$tv.n_id}">
+						<div class="img" style="background-image: url(__uploads__/{$tv.picurl});">
+							<img src="__static__/web/images/index_12.png">
+						</div>
+						<div class="wz">
+							<h2><b></b>{$tv.title}</h2>
+							<h3>{$tv.posttime|date="Y-m-d"}</h3>
+						</div>
+					</a>
+				</li>
+				{/volist}
+			</ul>
+		</div>
+	</div>
+	
+	{include file="web/common/bot"}
+
+	<script>
+		var swiper = new Swiper('.about_gsry_nr', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				960: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+
+				1260: {
+					slidesPerView: 5,
+					spaceBetween: 40,
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="css/colorbox.css" />
+	<script src="js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Examples of how to assign the Colorbox event to elements
+			$(".group1").colorbox({
+				rel: 'group1',
+				maxWidth: false,
+				width: "75%",
+				height: "auto"
+			});
+		});
+	</script>
+
+</body>
+
+</html>

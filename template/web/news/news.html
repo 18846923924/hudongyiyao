@@ -1,0 +1,110 @@
+{include file="web/common/top"}
+<body>
+
+	{include file="web/common/header"}
+	{if $banner}
+	<div class="ny_banner" style="background-image: url(__uploads__/{$banner.pic});">
+		<div class="text">
+			{$banner.title}
+			<p>{$banner.retitle}</p>
+		</div>
+	</div>
+	{else}
+	<div class="ny_banner" style="background-image: url(__static__/web/images/news_banner.jpg);">
+		<div class="text">新闻中心
+			<p>-News Center-</p>
+		</div>
+	</div>
+	{/if}
+
+	<div class="news">
+		<div class=" container">
+			<div class="lj">
+				<a href="/">首页</a> &#155 <a href="{:url('/news')}">新闻中心</a> {if $tinfo.title ?? ''}&#155 {$tinfo.title}{/if}
+			</div>
+			<ul class=" clearfix">
+				{volist name="$tjli" id="tv"}
+				<li>
+					<a href="{:url('/Detail')}?id={$tv.n_id}">
+						<div class="img" style="background-image: url(__uploads__/{$tv.picurl});">
+							<img src="__static__/web/images/index_12.png">
+						</div>
+						<div class="wz">
+							<h2><b></b>{$tv.title}</h2>
+							<h3>{$tv.posttime|date="Y-m-d"}</h3>
+						</div>
+					</a>
+				</li>
+				{/volist}
+			</ul>
+		</div>
+	</div>
+
+	<div class="news1">
+		<div class="container">
+			<div class="bt">
+				{volist name="$NewsCat" id="v"}
+				<a href="{:url('/News')}?cid={$v.nc_id}" {if $v.nc_id == $Think.get.cid}class="on"{/if}>
+					{$v.title}
+				</a>
+				{/volist}
+			</div>
+			<ul>
+				{volist name="$Newsli" id="vo"}
+				<li>
+					<h2>{$vo.catname}</h2>
+					<p>
+						<a href="{:url('/Detail')}?id={$vo.n_id}">{$vo.title}</a>
+					</p>
+					<span>&#155</span>
+				</li>
+				{/volist}
+			</ul>
+			<div class="sabrosus">
+				{$page|raw}
+			</div>
+		</div>
+	</div>
+	
+	{include file="web/common/bot" /}
+
+	<script>
+		var swiper = new Swiper('.about_gsry_nr', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				960: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+
+				1260: {
+					slidesPerView: 5,
+					spaceBetween: 40,
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="__static__/web/css/colorbox.css" />
+	<script src="__static__/web/js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Examples of how to assign the Colorbox event to elements
+			$(".group1").colorbox({
+				rel: 'group1',
+				maxWidth: false,
+				width: "75%",
+				height: "auto"
+			});
+		});
+	</script>
+
+</body>
+
+</html>

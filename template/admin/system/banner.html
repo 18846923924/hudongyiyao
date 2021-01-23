@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>轮播广告</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <a href="/cms/banner/add/0" class="layui-btn">新增</a>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>图片</th>
+                                <th>类型</th>
+                                <th>是否显示</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="banners" id="vo" empty="<tr><td colspan=7>暂无数据</td></tr>"}
+                            <tr>
+                                <td><img src="__uploads__/{$vo.pic}" height="60px" alt=""></td>
+                                <td>{:bannerType($vo.type)}</td>
+                                <td>{:parseBoo($vo.is_show)}</td>
+                                <td>
+                                    <input type="number" value="{$vo.sort}" class="layui-input sort-input" onchange="bannerSort('{$vo.b_id}',this)">
+                                </td>
+                                <td>
+                                    <a href="/cms/banner/add/{$vo.b_id}" class="layui-btn layui-btn-xs">修改</a>
+                                    {eq name="vo.is_show" value="1"}
+                                    <a class="layui-btn layui-btn-xs layui-btn-primary" onclick="bannerShow('{$vo.b_id}',0,'确定隐藏此banner?')">隐藏</a>
+                                    {else\}
+                                    <a class="layui-btn layui-btn-xs layui-btn-normal" onclick="bannerShow('{$vo.b_id}',1,'确定显示此banner?')">显示</a>
+                                    {/eq}
+                                    <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="bannerDel('{$vo.b_id}',this)">删除</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$banners|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+
+    })
+    function bannerDel(b_id,obj) {
+        layer.confirm('确定删除此banner',{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "banner/del",
+                data : {
+                    b_id:b_id,
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function bannerShow(b_id,is_show,title) {
+        layer.confirm(title,{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "banner/show",
+                data : {
+                    b_id:b_id,
+                    is_show:is_show
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            location.reload()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function bannerSort(b_id,obj) {
+        let sort = $(obj).val()
+        var load_index = layer.load(1, {
+            shade: [0.5,'#000'] //0.1透明度的背景
+        });
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "banner/sort",
+            data : {
+                b_id:b_id,
+                sort:sort
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg)
+                layer.close(load_index)
+            },
+            error : function () {
+                layer.msg('网络异常')
+                layer.close(load_index)
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+	<header class="header ny_header">
+
+		<div class=" container">
+			<div class="logo"><a href="index.html"><i></i></a></div>
+			<div class="head_right">
+				<ul id="nav" class="nav fr clearfix">
+					{volist name="nav" id="vo"}
+					<li class="nLi {if $controller == $vo.biaoshi}on{/if}">
+
+						<h3>
+							<a href="{$vo.linkurl}">{$vo.title}</a>
+						</h3>
+						{if $vo.biaoshi == 'Industry'}
+						<div class="sub">
+							<ul>
+								{volist name="$gnav" id="gv"}
+								<li><a href="{$vo.linkurl}?cid={$gv.gc_id}">{$gv.title}</a></li>
+								{/volist}
+							</ul>
+						</div>
+						{/if}
+					</li>
+					{/volist}
+					<li class="nLi">
+						<h3>
+							<a href="javascript:(0);"><i class="fa fa-phone"></i>+86 400 123 123</a>
+						</h3>
+					</li>
+				</ul>
+				<div class="search">
+					<h2>
+						<i></i>
+					</h2>
+					<h3>
+						<input type="text" class="text">
+						<i></i>
+					</h3>
+				</div>
+			</div>
+
+			<!-- 手机版导航 -->
+			<div class="phone_btn">
+				<a href="javascript:;">
+					<span>
+						<i></i>
+					</span>
+				</a>
+			</div>
+			<div class="menu_box">
+				<div class="menu_cot">
+					<div class="navMenubox">
+						<div id="slimtest1">
+							<ul class="navMenu">
+								{volist name="nav" id="vo"}
+								<li>
+									<a href="{$vo.linkurl}" class="afinve">{$vo.title}<i class="arroww"></i></a>
+									{if $vo.biaoshi == 'Industry'}
+									<ul class="sub-menu">
+										{volist name="$gnav" id="gv"}
+										<li><a href="{$vo.linkurl}?cid={$gv.gc_id}">{$gv.title}</a></li>
+										{/volist}
+									</ul>
+									{/if}
+								</li>
+								{/volist}
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="menu_close">
+					<a href="javsacript:;"><img src="images/close.svg" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+	</header>

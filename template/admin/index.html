@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <!-- 上方tab -->
+    <div class="row" >
+        <div class="col-sm-4" style="display: none;">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>会员</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><label></label></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>产品数量</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><label>{$goods_count}</label></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>文章数量</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><label>{$news_count}</label></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中间折线 -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <i class="fa fa-cogs"></i> 系统信息
+                    </div>
+                    <div class="panel-body">
+                        <p><i class="fa fa-sitemap"></i> 框架版本：ThinkPHP{$sys_info.think_v}
+                        </p>
+                        <p><i class="fa fa-windows"></i> 服务环境：{$sys_info.web_server}
+                        </p>
+                        <p><i class="fa fa-futbol-o"></i> 服务器操作系统：{$sys_info.os}
+                        </p>
+                        <p><i class="fa fa-tag"></i> 服务器域名/IP：{$sys_info.domain} [ {$sys_info.ip} ]
+                        </p>
+                        <p><i class="fa fa-credit-card"></i> PHP 版本：{$sys_info.phpv}
+                        </p>
+                        <p><i class="fa fa-warning"></i> 上传附件限制：{$sys_info.fileupload}
+                        </p>
+                        <p><i class="fa fa-unlock"></i> 最大占用内存：{$sys_info.memory_limit}
+                        </p>
+                        <p><i class="fa fa-times-circle"></i> 最大执行时间：{$sys_info.max_ex_time}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-cogs"></i> 服务信息
+                    </div>
+                    <div class="panel-body">
+                        <p><i class="fa fa-send-o"></i> 官网<a href="http://www.zjteam.com" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;http://www.zjteam.com</a>
+                        </p>
+                        <p><i class="fa fa-qq"></i> QQ<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1054219137&amp;site=qq&amp;menu=yes" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;1054219137</a>
+                        </p>
+                        <p><i class="fa fa-weixin"></i> 微信：<a href="javascript:;">&nbsp;&nbsp;&nbsp;&nbsp;17853391882</a>
+                        </p>
+                        <p><i class="fa fa-id-card"></i> 邮箱<a href="javascript:;" class="邮箱">&nbsp;&nbsp;&nbsp;&nbsp;zhb1002462117@163.com / 钟华滨</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <i class="fa fa-window-restore"></i> 注意
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                        <h4>1.定时修改密码且密码尽量复杂</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{include file="/admin/footer"/}
+</body>
+</html>

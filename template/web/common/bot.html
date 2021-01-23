@@ -1,0 +1,25 @@
+<div class="di">
+	<div class=" container">
+		<div class="logo">
+			{if $blogo}
+			<img src="__uploads__/{$blogo}">
+			{else}
+			<img src="__static__/web/images/logo.png">
+			{/if}
+		</div>
+
+		<h2>
+			{volist name="$firendlink" id="fv"}
+			<a href="{$fv.linkurl}"><img src="__uploads__/{$fv.picurl}"></a>
+			{/volist}
+		</h2>
+		<h3>
+			{volist name="nav" id="nvo"}
+			{if $nvo.biaoshi != 'Index'}
+			<a href="{$nvo.linkurl}">{$nvo.title}</a>|
+			{/if}
+			{/volist}
+		</h3>
+		<p>{$cfg_copyright} <a href="https://beian.miit.gov.cn">{$cfg_icp}</a> DESIGN BY: WEETOP</p>
+	</div>
+</div>

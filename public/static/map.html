@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    body, html{width: 100%;height: 100%;overflow: hidden;margin:0;}
+  </style>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=C6123b0bce5652c26eb066341aa22a7d&s=1"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
+  <title>SearchInfoWindow</title>
+</head>
+<body>
+<div id="map" style="height:100%;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;"></div>
+<script type="text/javascript">
+    var map = new BMap.Map('map');
+    var poi = new BMap.Point(120.303822,30.372423);
+    map.centerAndZoom(poi, 18);
+    map.enableScrollWheelZoom();
+    map.addControl(new BMap.NavigationControl());
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '地址：浙江省杭州市余杭区南苑街道怡丰城11幢733室C2' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "杭州星诺商礼文化有限公司",      //标题
+        width  : 290,             //宽度
+        height : 70,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
+    });
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+    searchInfoWindow.open(marker); //在marker上打开检索信息串口  
+</script>
+</body>
+</html>
+</script>

@@ -1,0 +1,85 @@
+{include file="web/common/top"}
+<body>
+	{include file="web/common/header"}
+	{if $banner}
+	<div class="ny_banner" style="background-image: url(__uploads__/{$banner.pic});">
+		<div class="text">
+			{$banner.title}
+			<p>{$banner.retitle}</p>
+		</div>
+	</div>
+	{else}
+	<div class="ny_banner" style="background-image: url(__static__/web/images/industry_banner.jpg);">
+		<div class="text">产业项目
+			<p>-Industrial Projects-</p>
+		</div>
+	</div>
+	{/if}
+	<div class="industry">
+		<div class=" container">
+			<div class="lj">
+				<a href="/">首页</a> &#155 产业项目 {if $tinfo.title ?? ''}&#155 {$tinfo.title}{/if}</div>
+			<ul>
+				{volist name="$goodsli" id="v"}
+				<li>
+					<a href="{:url('/InDetail')}?id={$v.g_id}">
+						<div class="img" style="background-image: url(__uploads__/{$v.picurl});">
+						<img src="__static__/web/images/index_08.png"></div>
+						<div class="wz">
+							<h2><b></b>{$v.title}</h2>
+							<h3>{$v.retitle}</h3>
+						</div>
+					</a>
+				</li>
+				{/volist}
+				
+			</ul>
+			<div class="sabrosus">
+				{$page|raw}
+			</div>
+
+		</div>
+	</div>
+	
+	{include file="web/common/bot"}
+
+	<script>
+		var swiper = new Swiper('.about_gsry_nr', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+				960: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+
+				1260: {
+					slidesPerView: 5,
+					spaceBetween: 40,
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="__static__/web/css/colorbox.css" />
+	<script src="__static__/web/js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Examples of how to assign the Colorbox event to elements
+			$(".group1").colorbox({
+				rel: 'group1',
+				maxWidth: false,
+				width: "75%",
+				height: "auto"
+			});
+		});
+	</script>
+
+</body>
+
+</html>

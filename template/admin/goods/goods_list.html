@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>产品管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="name" value="{$name}" placeholder="请输入产品名称" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="gc_id">
+                                        <option value="">请选择产品分类</option>
+                                        {volist name="cats" id="vo"}
+                                        <option value="{$vo.gc_id}" {eq name="vo.gc_id" value="$gc_id"}selected{/eq}>{$vo.title}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">搜索</button>
+                                </div>
+                                <a  href="/cms/goods/add"  class="layui-btn layui-btn-primary" >新增</a>
+                                <a href="/cms/goods" class="layui-btn">刷新</a>
+                            </div>
+                        </form>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>产品ID</th>
+                                <th>产品</th>
+                                <th>图片</th>
+                                <th>分类</th>
+                                <th>是否展示</th>
+                                <th>排序</th>
+                                <th style="width: 200px">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="data" id="vo" empty="<tr><td colspan=11>暂无数据</td></tr>"}
+                            <tr>
+                                <td>{$vo.g_id}</td>
+                                <td>名称：{$vo.title}</td>
+                                <td><img src="__uploads__/{$vo.picurl}" height="60px" alt="" onerror="this.src='__uploads__/error.jpg'"></td>
+                                <td>{$vo.cat_name}</td>
+
+                                <td align="center">
+                                    {eq name="vo.checkinfo" value="1"}
+                                    <img src="__static__/no.png" onclick="goodsBoo('{$vo.g_id}',1,'status',this)" style="display: none">
+                                    <img src="__static__/yes.png" onclick="goodsBoo('{$vo.g_id}',0,'status',this)">
+                                    {else\}
+                                    <img src="__static__/no.png" onclick="goodsBoo('{$vo.g_id}',1,'status',this)">
+                                    <img src="__static__/yes.png" onclick="goodsBoo('{$vo.g_id}',0,'status',this)" style="display: none">
+                                    {/eq}
+                                </td>
+                                <td><input type="number" class="layui-input sort-input" value="{$vo.sort}" onchange="goodsSort('{$vo.g_id}',this)"></td>
+                                <td>
+                                    <p>
+                                        <a href="/cms/goods/edit/{$vo.g_id}" class="layui-btn layui-btn-xs">修改</a>
+                                        <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="delGoods('{$vo.g_id}',this)">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$data|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+
+    })
+    function delGoods(g_id,obj) {
+        layer.confirm('确定删除此产品',{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "goods/del",
+                data : {
+                    g_id:g_id
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function goodsSort(g_id,obj) {
+        let sort = $(obj).val()
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "goods/sort",
+            data : {
+                g_id:g_id,
+                sort:sort
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg)
+            },
+            error : function () {
+                layer.msg('网络异常')
+            }
+        })
+    }
+    function goodsBoo(g_id,status,content,obj) {
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "goods/status",
+            data : {
+                g_id:g_id,
+                status:status,
+                content:content
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    $(obj).hide()
+                    if(status == 1)
+                        $(obj).next().show()
+                    else
+                        $(obj).prev().show()
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+            }
+        })
+    }
+</script>
+</body>
+</html>
