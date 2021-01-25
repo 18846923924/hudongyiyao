@@ -55,50 +55,14 @@ Route::group('/cms/api/', function () {
     Route::post('banner/sort', 'admin/banner/bannerSort');//
     Route::post('banner/show', 'admin/banner/bannerShow');//
 
-    //关于我们
-    Route::post('about/add','admin/about/add');//关于我们文章处理
- 
-
-    /**-商品模块-**/
-    Route::post('goods/cat/add', 'admin/goodsCat/goodsCatadd');//商品分类增改
-    Route::post('goods/cat/del', 'admin/goodsCat/goodsCatdel');//商品分类删除
-    Route::post('goods/cat/sort', 'admin/goodsCat/goodsCatsort');//商品分类排序
-    Route::post('goods/cat/status', 'admin/goodsCat/goodsCatstatus');//商品分类状态切换
-
-    /**-联系我们-**/
-    Route::post('message/add', 'admin/message/messageEdit');//留言增改
-    Route::post('message/status', 'admin/message/status');//留言
-    Route::post('message/del', 'admin/message/del');//留言
-
-    Route::post('goods/add', 'admin/goods/goodsAdd');//产品新增
-    Route::post('goods/sort', 'admin/goods/goodsSort');//商品分类排序
-    Route::post('goods/status', 'admin/goods/goodsStatus');//商品分类状态切换
-    Route::post('goods/del', 'admin/goods/goodsDel');//商品分类删除
-
-    /*-新闻模块-*/
-    Route::post('news/cat/add', 'admin/newsCat/newsCatadd');//新闻分类增改
-    Route::post('news/cat/del', 'admin/newsCat/newsCatdel');//新闻分类删除
-    Route::post('news/cat/sort', 'admin/newsCat/newsCatsort');//新闻分类排序
-    Route::post('news/cat/status', 'admin/newsCat/newsCatstatus');//新闻分类状态切换
-
-    Route::post('news/add', 'admin/news/newsAdd');//新闻新增
-    Route::post('news/sort', 'admin/news/newsSort');//新闻排序
-    Route::post('news/status', 'admin/news/newsStatus');//新闻状态切换
-    Route::post('news/del', 'admin/news/newsDel');//新闻删除
-
-    /*-公司荣誉-*/
-    Route::post('honor/add', 'admin/honor/honoradd');//商品分类增改
-    Route::post('honor/del', 'admin/honor/honordel');//商品分类删除
-    Route::post('honor/sort', 'admin/honor/honorsort');//商品分类排序
-    Route::post('honor/status', 'admin/honor/honorstatus');//商品分类状态切换
-
-    /*-友情链接-*/
-    Route::post('link/add', 'admin/weblink/weblinkadd');//友情链接增改
-    Route::post('link/del', 'admin/weblink/weblinkdel');//友情链接删除
-    Route::post('link/sort', 'admin/weblink/weblinksort');//友情链接排序
-    Route::post('link/status', 'admin/weblink/weblinkstatus');//友情链接状态切换
-
     Route::post('config/add','admin/config/Configadd');
+
+
+    Route::post('internaluser/add','admin/internaluser/addIuInfo');
+    Route::post('internaluser/status','admin/internaluser/status');
+    Route::post('internaluser/del','admin/internaluser/del');
+
+
 
     /*-导航模块-*/
     Route::post('nav/add', 'admin/nav/navadd');//导航增改
@@ -130,38 +94,20 @@ Route::group('/cms/', function () {
     Route::get('album/pic/list/:a_id','admin/album/albumPic');//
     Route::get('album/pic/count/:a_id','admin/album/albumPicCount');//
 
-
-    /*产品管理*/
-    Route::get('goods/cat', 'admin/goodsCat/IndexPage');//产品分类
-    Route::get('goods', 'admin/goods/indexPage');//产品列表
-    Route::get('goods/add', 'admin/goods/goodsAddPage');//产品新增
-    Route::get('goods/edit/:g_id', 'admin/goods/goodsEditPage');//产品新增
-
-    //新闻管理
-    Route::get('news/cat', 'admin/newsCat/IndexPage');//产品分类
-    Route::get('news', 'admin/news/indexPage');//产品列表
-    Route::get('news/add', 'admin/news/newsAddPage');//产品新增
-    Route::get('news/edit/:n_id', 'admin/news/newsEditPage');//产品新增
+    //内部账号（业务员）
+    Route::get('internaluser','admin/internaluser/indexPage');
+    Route::get('internaluser/add','admin/internaluser/addPage');
+    Route::get('internaluser/edit/:user_id','admin/internaluser/editPage');
 
 
-    //关于我们
-    Route::get('about','admin/about/indexPage');//关于我们
-    Route::get('about/add','admin/about/addPage');//关于我们
-    Route::get('about/edit/:a_id','admin/about/editPage');//关于我们
-    Route::get('honor','admin/honor/indexPage');//关于我们
-
-    //友情链接
-    Route::get('link', 'admin/weblink/IndexPage');//友情链接
+    //医院管理
+    Route::get('hopsital','admin/hopsital/indexPage');
 
     //全局配置
     Route::get('config', 'admin/config/IndexPage');
 
-    //导航管理
-    Route::get('nav','admin/nav/indexPage');
 
-    Route::get('message','admin/message/indexPage');
-//    Route::get('nav/add','admin/nav/indexPage');
-//    Route::get('nav/edit/n_id','admin/nav/indexPage');
+
 
 
 

@@ -28,6 +28,7 @@
                                 <td>昵称</td>
                                 <td>分组</td>
                                 <td>状态</td>
+                                <td>省份</td>
                                 <td>操作</td>
                             </tr>
                             </thead>
@@ -43,6 +44,13 @@
                                     {else\}
                                     <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="changeStatus('{$vo.au_id}',1,'解锁后用户可恢复登录')">锁定</button>
                                     {/eq}
+                                </td>
+                                <td>
+                                    {if $vo.ag_id == 1}
+                                        超级管理员
+                                    {else}
+                                        {$vo.province|getProvName}
+                                    {/if}
                                 </td>
                                 <td>
                                     <button class="layui-btn layui-btn-xs" onclick="initPwd('{$vo.au_id}')">密码重置</button>
@@ -75,7 +83,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">省份</label>
             <div class="layui-input-inline">
-                <select name="ag_id" lay-filter="ag_id" lay-verify="required" lay-reqtext="请选择省份" lay-search>
+                <select name="prov" lay-filter="prov" lay-verify="required" lay-reqtext="请选择省份" lay-search>
                     <option value="">请选择省份</option>
                     {volist name="province" id="vo"}
                     <option value="{$vo.p_code}">{$vo.name}</option>

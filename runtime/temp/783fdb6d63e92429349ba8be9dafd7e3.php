@@ -1,4 +1,4 @@
-<?php /*a:2:{s:50:"D:\xiangmu\huadongyiyao\template\admin\common.html";i:1610508836;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611388449;}*/ ?>
+<?php /*a:2:{s:50:"D:\xiangmu\huadongyiyao\template\admin\common.html";i:1610508836;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611546374;}*/ ?>
 <!DOCTYPE html>
 <html>
 <!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:16:41 GMT -->
@@ -16,7 +16,7 @@
     <link href="/public/static/layui/css/layui.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/static/css/commom.css" media="all">
     <link rel="stylesheet" href="/public/static/css/page.css?v1" media="all">
-    <link href="//at.alicdn.com/t/font_2345205_md0dljx1fp.css" rel="stylesheet">
+    <link href="//at.alicdn.com/t/font_2345205_qkqe1wys9ll.css" rel="stylesheet">
     
 </head>
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>产品编辑</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <input type="number" value="{$data.user_id}" name="user_id" hidden>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">头像：</label>
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal" onclick="chooseImg('avatar',1)"><i
+                                            class="layui-icon"></i>选择头像
+                                    </button>
+                                    <span class="pic_span_avatar">
+                                        <span><img oncontextmenu="rightBtn(this)" ondblclick="delThisPic(this)" class="layui-upload-img" src="__uploads__/{$data.avatar}" height="60px">
+                                        <input style="display: none;" type="text" name="avatar"  value="{$data.avatar}" class="layui-input"></span>
+                                    </span>
+                                </div>
+                                <label class="layui-form-label"></label>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">所属省份：</label>
+                               <div class="layui-input-block">
+                                    <select name="province" lay-filter="province" lay-verify="required" lay-reqtext="请选择产品分类">
+                                        <option value="">请选择产品分类</option>
+                                        {volist name="prov" id="vo"}
+                                        <option value="{$vo.p_code}" {eq name="data.province" value="$vo.p_code"}selected{/eq}>{$vo.name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">账号：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="username" value="{$data.username}" lay-verify="required" lay-reqtext="请输入账号" class="layui-input" maxlength="250" readonly="">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">密码：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="pwd" lay-verify="" lay-reqtext="请输入密码" class="layui-input" maxlength="250">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">手机号/联系电话：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="mobile" value="{$data.mobile}" lay-verify="required" lay-reqtext="请输入手机号/联系电话" class="layui-input" maxlength="30">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">工号：</label>
+                                <div class="layui-input-block">
+                                   <input type="text" name="idnum"  value="{$data.idnum}" lay-verify="" lay-reqtext="请输入工号" class="layui-input" maxlength="30">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">姓名：</label>
+                                <div class="layui-input-block">
+                                   <input type="text" name="name" value="{$data.name}" lay-verify="required" lay-reqtext="请输入工号" class="layui-input" maxlength="40">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">昵称：</label>
+                                <div class="layui-input-block">
+                                   <input type="text" name="nickname" value="{$data.nickname}" lay-verify="required" lay-reqtext="请输入工号" class="layui-input" maxlength="40">
+                                </div>
+                            </div>
+                          
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">展    示：</label>
+                                <div class="layui-input-block">
+                                    <select name="checkinfo">
+                                        <option value="1" {if condition="$data.checkinfo eq '1'"}selected{/if}>正常
+                                        </option>
+                                        <option value="0" {if condition="$data.checkinfo eq '0'"}selected{/if}>冻结
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="add_data">立即提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+{include file="/admin/album/open"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+        form.on('submit(add_data)',function (data) {
+            var _data = data.field
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "internaluser/add",
+                data : _data,
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            window.location.href = '/cms/internaluser'
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+            return false
+        })
+    })
+</script>
+</body>
+</html>

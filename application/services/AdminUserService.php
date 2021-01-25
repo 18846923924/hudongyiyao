@@ -63,7 +63,7 @@ class AdminUserService
     {
         $staffs = Db::name('admin_user au')
             ->leftJoin('admin_group ag','au.ag_id=ag.ag_id')
-            ->field('ag.name group_name,au.name,au.status,au.au_id,au.nickname')
+            ->field('ag.name group_name,au.name,au.ag_id,au.province,au.status,au.au_id,au.nickname')
             ->order('ag.ag_id')
             ->paginate(10);
         return $staffs;
@@ -207,7 +207,7 @@ class AdminUserService
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function adminUserAdd($ag_id,$name,$pwd,$nickname,$s_id,$prov)
+    public function adminUserAdd($ag_id,$name,$pwd,$nickname,$prov)
     {
         $db_au = new AdminUser();
         $au = $db_au->where('name',$name)->find();
@@ -216,13 +216,16 @@ class AdminUserService
         $au_id = $db_au->insertGetId([
             'ag_id'=>$ag_id,
             'name'=>$name,
-            'prov'=>$prov,
+            'province'=>$prov,
             'pwd'=>Hash::make($pwd),
             'status'=>1,
             'nickname'=>$nickname,
-            's_id'=>$s_id,
         ]);
         return $au_id;
+    }
+
+    public function adminAreaPermission($data){
+      return Db::name("admin_area_permission")->insert($data);
     }
 
     public function initPwd($au_id)
@@ -261,8 +264,40 @@ class AdminUserService
     public function getAdminUserById($au_id)
     {
         $db_au = new AdminUser();
-        $admin_user = $db_au->field('name,nickname')->find($au_id);
+        $admin_user = $db_au->field('name,nickname,ag_id')->find($au_id);
         unset($db_au);
         return $admin_user;
     }
+
+    public function getAdminUserID(){
+        if (!$this->admin_user = AdminUserService::getInstance()->getAdminLoginStatus())
+            throw new UserOff();
+        $db_au = new AdminUser();
+        $username = Session::get('admin_user');
+        $au_id = $db_au->where("name",$username['name'])->value('au_id');
+        return $au_id;
+    }
+
+    public function getAdminCode(){
+        $db_au = new AdminUser();
+        if(Session::has('admin_user')){
+            $username = Session::get('admin_user');
+            $adminInfo = $db_au->where("name",$username['name'])->find();
+            if($adminInfo['ag_id'] != 1){
+                $areaarr = Db::name("admin_area_permission")
+                    ->where("au_id",$adminInfo['au_id'])
+                    ->field("areacode")
+                    ->select();
+            }else{
+                $areaarr = Db::name("province")->select();
+            }
+
+            return $areaarr;
+        }else{
+            return false;
+        }
+
+    }
+
+
 }

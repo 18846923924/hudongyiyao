@@ -1,4 +1,4 @@
-<?php /*a:3:{s:56:"D:\xiangmu\huadongyiyao\template\admin\system\staff.html";i:1611395375;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611388449;s:50:"D:\xiangmu\huadongyiyao\template\admin\footer.html";i:1587717024;}*/ ?>
+<?php /*a:3:{s:56:"D:\xiangmu\huadongyiyao\template\admin\system\staff.html";i:1611544734;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611546374;s:50:"D:\xiangmu\huadongyiyao\template\admin\footer.html";i:1587717024;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
     <link href="/public/static/layui/css/layui.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/static/css/commom.css" media="all">
     <link rel="stylesheet" href="/public/static/css/page.css?v1" media="all">
-    <link href="//at.alicdn.com/t/font_2345205_md0dljx1fp.css" rel="stylesheet">
+    <link href="//at.alicdn.com/t/font_2345205_qkqe1wys9ll.css" rel="stylesheet">
     
 </head>
 <body class="gray-bg">
@@ -45,6 +45,7 @@
                                 <td>昵称</td>
                                 <td>分组</td>
                                 <td>状态</td>
+                                <td>省份</td>
                                 <td>操作</td>
                             </tr>
                             </thead>
@@ -59,6 +60,13 @@
                                     <button class="layui-btn layui-btn-xs" onclick="changeStatus('<?php echo htmlentities($vo['au_id']); ?>',0,'锁定后用户将不可登录')">正常</button>
                                     <?php else: ?>
                                     <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="changeStatus('<?php echo htmlentities($vo['au_id']); ?>',1,'解锁后用户可恢复登录')">锁定</button>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <?php if($vo['ag_id'] == 1): ?>
+                                        超级管理员
+                                    <?php else: ?>
+                                        <?php echo htmlentities(getProvName($vo['province'])); ?>
                                     <?php endif; ?>
                                 </td>
                                 <td>
@@ -92,7 +100,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">省份</label>
             <div class="layui-input-inline">
-                <select name="ag_id" lay-filter="ag_id" lay-verify="required" lay-reqtext="请选择省份" lay-search>
+                <select name="prov" lay-filter="prov" lay-verify="required" lay-reqtext="请选择省份" lay-search>
                     <option value="">请选择省份</option>
                     <?php if(is_array($province) || $province instanceof \think\Collection || $province instanceof \think\Paginator): $i = 0; $__LIST__ = $province;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                     <option value="<?php echo htmlentities($vo['p_code']); ?>"><?php echo htmlentities($vo['name']); ?></option>

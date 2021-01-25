@@ -179,3 +179,8 @@ function webconfig($varname){
     $config = Db::name('webconfig')->where('varname="'.$varname.'"')->find();
     return $config['varvalue'];
 }
+
+function getProvName($prov){
+    $prov = Db::name('province')->where('code="'.$prov.'"')->find();
+    return $prov['name'];
+}

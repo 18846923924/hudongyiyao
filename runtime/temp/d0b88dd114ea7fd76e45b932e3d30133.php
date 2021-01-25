@@ -1,4 +1,4 @@
-<?php /*a:3:{s:61:"D:\xiangmu\huadongyiyao\template\admin\system\permission.html";i:1590998903;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611388449;s:50:"D:\xiangmu\huadongyiyao\template\admin\footer.html";i:1587717024;}*/ ?>
+<?php /*a:3:{s:61:"D:\xiangmu\huadongyiyao\template\admin\system\permission.html";i:1590998903;s:48:"D:\xiangmu\huadongyiyao\template\admin\head.html";i:1611546374;s:50:"D:\xiangmu\huadongyiyao\template\admin\footer.html";i:1587717024;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
     <link href="/public/static/layui/css/layui.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/static/css/commom.css" media="all">
     <link rel="stylesheet" href="/public/static/css/page.css?v1" media="all">
-    <link href="//at.alicdn.com/t/font_2345205_md0dljx1fp.css" rel="stylesheet">
+    <link href="//at.alicdn.com/t/font_2345205_qkqe1wys9ll.css" rel="stylesheet">
     
 </head>
 <body class="gray-bg">

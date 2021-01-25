@@ -13,7 +13,9 @@
 namespace app\services;
 
 
+use app\model\AdminUser;
 use think\Db;
+use think\facade\Session;
 
 class AreaService
 {
@@ -45,6 +47,25 @@ class AreaService
         $query = Db::table('province')->field('code as p_code,name');
         $province = $query->select();
         app('cache')->tag(self::CACHE_TAGS)->set($key,$province,3600);
+        return $province;
+    }
+
+    public function getAdminProvince($areaCode){
+
+        if(!empty($areaCode)){
+            $areaCode = is_array($areaCode)?array_column($areaCode, 'code'):$areaCode;
+
+            $areaCode = is_array($areaCode)?implode(",", $areaCode):$areaCode;
+
+        }else{
+            $username = Session::get('admin_user');
+            $db_au = new AdminUser();
+            $areaCode = $db_au ->where("name",$username)->value('province');
+        }
+
+
+        $query = Db::table('province')->field('code as p_code,name');
+        $province = $query->where("code","in",$areaCode)->select();
         return $province;
     }
 

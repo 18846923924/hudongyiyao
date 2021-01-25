@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+{include file="/admin/head"/}
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>业务员管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="name" value="{$name}" placeholder="请输入业务员名称" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="prov" lay-filter="province" lay-verify="" lay-reqtext="请选择所属省份" lay-search >
+                                        <option value="">请选择所属省份</option>
+                                        {volist name="$province" id="vo"}
+                                        <option value="{$vo.p_code}" {eq name="prov" value="$vo.p_code"}selected{/eq}>{$vo.name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">搜索</button>
+                                </div>
+                                <a href="/cms/internaluser/add"  class="layui-btn layui-btn-primary" >新增</a>
+                                <a href="/cms/internaluser" class="layui-btn">刷新</a>
+                            </div>
+                        </form>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>业务员ID</th>
+                                <th>账号</th>
+                                <th>密码</th>
+                                <th>姓名</th>
+                                <th>头像</th>
+                                <th>手机号</th>
+                                <th>工号</th>
+                                <th>状态</th>
+                                <th style="width: 200px">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="data" id="vo" empty="<tr><td colspan=11>暂无数据</td></tr>"}
+                            <tr>
+                                <td>{$vo.user_id}</td>
+                                <td>{$vo.username}</td>
+                                <td>{$vo.pwdtext}</td>
+                                <td>{$vo.name}</td>
+                                <td><img src="__uploads__/{$vo.avatar}" height="60px" alt="" onerror="this.src='__uploads__/error.jpg'"></td>
+                                <td>{$vo.mobile}</td>
+                                <td>{$vo.idnum}</td>
+                                <td align="center">
+                                    {eq name="vo.checkinfo" value="1"}
+                                    <img src="__static__/no.png" onclick="internaluserBoo('{$vo.user_id}',1,'status',this)" style="display: none">
+                                    <img src="__static__/yes.png" onclick="internaluserBoo('{$vo.user_id}',0,'status',this)">
+                                    {else\}
+                                    <img src="__static__/no.png" onclick="internaluserBoo('{$vo.user_id}',1,'status',this)">
+                                    <img src="__static__/yes.png" onclick="internaluserBoo('{$vo.user_id}',0,'status',this)" style="display: none">
+                                    {/eq}
+                                </td>
+                                <td>
+                                    <p>
+                                        <a href="/cms/internaluser/edit/{$vo.user_id}" class="layui-btn layui-btn-xs">修改</a>
+                                        <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="delinternaluser('{$vo.user_id}',this)">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$data|raw}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="/admin/footer"/}
+<script>
+    layui.use(['form','layer'], function() {
+        var form = layui.form
+
+    })
+    function delinternaluser(user_id,obj) {
+        layer.confirm('确定删除此业务员？',{btn:'确定',title:'请确认'},function () {
+            var load_index = layer.load(1, {
+                shade: [0.5,'#000'] //0.1透明度的背景
+            });
+            $.ajax({
+                type : "post",
+                url : adminOrigin() + "internaluser/del",
+                data : {
+                    user_id:user_id
+                },
+                success : function(res) {
+                    res = JSON.parse(res)
+                    if(res.code==0){
+                        layer.msg('操作成功',{
+                            time:500,
+                        },function () {
+                            $(obj).parent().parent().parent().remove()
+                        })
+                    }
+                    else
+                        layer.msg(res.msg)
+                    layer.close(load_index)
+                },
+                error : function () {
+                    layer.msg('网络异常')
+                    layer.close(load_index)
+                }
+            })
+        })
+    }
+    function internaluserSort(user_id,obj) {
+        let sort = $(obj).val()
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "internaluser/sort",
+            data : {
+                user_id:user_id,
+                sort:sort
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    layer.msg('操作成功',{
+                        time:500,
+                    },function () {
+
+                    })
+                }
+                else
+                    layer.msg(res.msg)
+            },
+            error : function () {
+                layer.msg('网络异常')
+            }
+        })
+    }
+    function internaluserBoo(user_id,status,content,obj) {
+        $.ajax({
+            type : "post",
+            url : adminOrigin() + "internaluser/status",
+            data : {
+                user_id:user_id,
+                status:status,
+                content:content
+            },
+            success : function(res) {
+                res = JSON.parse(res)
+                if(res.code==0){
+                    $(obj).hide()
+                    if(status == 1)
+                        $(obj).next().show()
+                    else
+                        $(obj).prev().show()
+                }
+                else
+                    layer.msg(res.msg,{offset:'t'})
+            },
+            error : function () {
+                layer.msg('网络异常',{offset:'t'})
+            }
+        })
+    }
+</script>
+</body>
+</html>
